@@ -84,11 +84,6 @@ JavaScript experiments and creative coding playground.
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Shaarim24&show_icons=true&theme=tokyonight&hide_border=true&title_color=2F2FE4&icon_color=7C8CFF&text_color=c9d1d9&bg_color=080616&rank_icon=github&custom_title=Shaarim's+GitHub+Stats" height="150" />
-&nbsp;
-<img src="https://streak-stats.demolab.com?user=Shaarim24&theme=tokyonight&hide_border=true&ring=2F2FE4&fire=7C8CFF&currStreakLabel=a0aec0&background=080616&dates=445577" height="150" />
-
-</div>
 
 <div align="center">
 <img src="https://komarev.com/ghpvc/?username=Shaarim24&label=views&color=2F2FE4&style=flat-square" />
