@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 240" width="100%" height="100%">
+  <defs>
+    <!-- Deepest pitch-black background with subtle cold-blue radial glow -->
+    <radialGradient id="monolithGlow" cx="50%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#0c1626" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#04060a" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="1" />
+    </radialGradient>
+    
+    <!-- Linear beam gradient -->
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="transparent" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+
+    <!-- Blueprint Grid -->
+    <pattern id="gridPattern" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="0.75" />
+    </pattern>
+
+    <style>
+      @keyframes beamSlide {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(200%); }
+      }
+      @keyframes pulseLive {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.9); }
+      }
+      @keyframes textShimmer {
+        0%, 100% { opacity: 0.85; }
+        50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4)); }
+      }
+      .beam-line {
+        animation: beamSlide 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+      .live-dot {
+        animation: pulseLive 2s ease-in-out infinite;
+      }
+      .font-sans-heavy {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Plus Jakarta Sans', Inter, sans-serif;
+        font-weight: 800;
+      }
+      .font-mono-tech {
+        font-family: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Monolith Plate -->
+  <rect width="960" height="240" fill="url(#monolithGlow)" rx="4" />
+  <rect width="960" height="240" fill="url(#gridPattern)" rx="4" />
+  <rect x="0.5" y="0.5" width="959" height="239" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" rx="4" />
+
+  <!-- Animated Top Scanning Hairline -->
+  <g opacity="0.8">
+    <rect x="0" y="0" width="320" height="1.5" fill="url(#beamGrad)" class="beam-line" />
+  </g>
+
+  <!-- Top Metadata Bar -->
+  <g transform="translate(36, 32)" class="font-mono-tech text-[10px]">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="186" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="10" cy="11" r="3" fill="#10b981" class="live-dot" />
+      <text x="20" y="14.5" fill="#f1f5f9" font-size="9" letter-spacing="1">AVAILABLE FOR WORK</text>
+    </g>
+
+    <g transform="translate(196, 0)">
+      <rect x="0" y="0" width="138" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <text x="10" y="14.5" fill="#94a3b8" font-size="9" letter-spacing="1">LOC: 22.80°N, 86.20°E</text>
+    </g>
+
+    <g transform="translate(730, 0)">
+      <text x="158" y="14.5" fill="#64748b" font-size="9" text-anchor="end" letter-spacing="1.5">SHAARIM.VERCEL.APP // 2026</text>
+    </g>
+  </g>
+
+  <!-- Hairline divider -->
+  <line x1="36" y1="64" x2="924" y2="64" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+
+  <!-- Main Hero Content -->
+  <g transform="translate(36, 92)">
+    <!-- Subtitle / Role -->
+    <text x="0" y="12" class="font-mono-tech" fill="#38bdf8" font-size="11" font-weight="600" letter-spacing="2.8">
+      FULL STACK ENGINEER &amp; UI CRAFTSMAN
+    </text>
+
+    <!-- Giant Name Header in Linear Style -->
+    <text x="0" y="58" class="font-sans-heavy" fill="#ffffff" font-size="46" letter-spacing="-1.5">
+      SHAARIM ALAM<tspan fill="#38bdf8">.</tspan>
+    </text>
+
+    <!-- Bio / Elevator statement -->
+    <text x="0" y="94" class="font-mono-tech" fill="#94a3b8" font-size="11.5" letter-spacing="0.2">
+      Diploma Year Two. Leaning MERN &amp; WebSockets • C++ Systems • 120 FPS WebGL Shaders.
+    </text>
+  </g>
+
+  <!-- Right Decorative Telemetry Badge Strip -->
+  <g transform="translate(700, 102)" class="font-mono-tech">
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="224" height="26" fill="#080a0f" stroke="rgba(56, 189, 248, 0.25)" rx="3" />
+      <text x="12" y="16.5" fill="#94a3b8" font-size="9.5">FRAME BUDGET</text>
+      <text x="212" y="16.5" fill="#38bdf8" font-size="9.5" font-weight="600" text-anchor="end">8.33ms (120Hz)</text>
+    </g>
+
+    <g transform="translate(0, 34)">
+      <rect x="0" y="0" width="224" height="26" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <text x="12" y="16.5" fill="#94a3b8" font-size="9.5">CORE RUNTIMES</text>
+      <text x="212" y="16.5" fill="#f1f5f9" font-size="9.5" font-weight="600" text-anchor="end">C++20 / MERN / GLSL</text>
+    </g>
+
+    <g transform="translate(0, 68)">
+      <rect x="0" y="0" width="224" height="26" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <text x="12" y="16.5" fill="#94a3b8" font-size="9.5">STATUS</text>
+      <text x="212" y="16.5" fill="#10b981" font-size="9.5" font-weight="600" text-anchor="end">Pixel Perfectionist</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Divider -->
+  <line x1="36" y1="218" x2="924" y2="218" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+</svg>

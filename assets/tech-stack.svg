@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 120" width="100%" height="100%">
+  <defs>
+    <radialGradient id="stackGlow" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0c1626" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#040609" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="1" />
+    </radialGradient>
+    <style>
+      .font-mono-tech {
+        font-family: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
+      }
+    </style>
+  </defs>
+
+  <rect width="960" height="120" fill="url(#stackGlow)" rx="4" />
+  <rect x="0.5" y="0.5" width="959" height="119" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" rx="4" />
+
+  <g transform="translate(32, 22)" class="font-mono-tech">
+    <g>
+      <text x="0" y="0" fill="#38bdf8" font-size="9" font-weight="600" letter-spacing="1.5">STACK &amp; RUNTIME CAPABILITIES</text>
+      <text x="896" y="0" fill="#64748b" font-size="8.5" text-anchor="end" letter-spacing="1">VERIFIED PRODUCTION SPECS</text>
+    </g>
+
+    <line x1="0" y1="12" x2="896" y2="12" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1" />
+
+    <!-- Badges Row 1 -->
+    <g transform="translate(0, 26)" font-size="9">
+      <!-- C++ -->
+      <rect x="0" y="0" width="76" height="22" fill="#080a0f" stroke="rgba(56, 189, 248, 0.3)" rx="3" />
+      <circle cx="10" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="20" y="14.5" fill="#ffffff">C++20</text>
+
+      <!-- React -->
+      <rect x="84" y="0" width="76" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="94" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="104" y="14.5" fill="#ffffff">React</text>
+
+      <!-- Node.js -->
+      <rect x="168" y="0" width="86" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="178" cy="11" r="2.5" fill="#10b981" />
+      <text x="188" y="14.5" fill="#ffffff">Node.js</text>
+
+      <!-- Socket.IO -->
+      <rect x="262" y="0" width="94" height="22" fill="#080a0f" stroke="rgba(56, 189, 248, 0.3)" rx="3" />
+      <circle cx="272" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="282" y="14.5" fill="#38bdf8">Socket.IO</text>
+
+      <!-- MongoDB -->
+      <rect x="364" y="0" width="88" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="374" cy="11" r="2.5" fill="#10b981" />
+      <text x="384" y="14.5" fill="#ffffff">MongoDB</text>
+
+      <!-- Three.js -->
+      <rect x="460" y="0" width="88" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="470" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="480" y="14.5" fill="#ffffff">Three.js</text>
+
+      <!-- GLSL -->
+      <rect x="556" y="0" width="76" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="566" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="576" y="14.5" fill="#ffffff">GLSL</text>
+
+      <!-- GSAP 3 -->
+      <rect x="640" y="0" width="78" height="22" fill="#080a0f" stroke="rgba(16, 185, 129, 0.3)" rx="3" />
+      <circle cx="650" cy="11" r="2.5" fill="#10b981" />
+      <text x="660" y="14.5" fill="#10b981">GSAP 3</text>
+
+      <!-- Lua 5.4 -->
+      <rect x="726" y="0" width="82" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="736" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="746" y="14.5" fill="#ffffff">Lua 5.4</text>
+
+      <!-- Linux / POSIX -->
+      <rect x="816" y="0" width="80" height="22" fill="#080a0f" stroke="rgba(255, 255, 255, 0.1)" rx="3" />
+      <circle cx="826" cy="11" r="2.5" fill="#94a3b8" />
+      <text x="836" y="14.5" fill="#ffffff">Linux</text>
+    </g>
+
+    <!-- Subtext Specifications -->
+    <g transform="translate(0, 62)" font-size="8.5" fill="#717d91">
+      <text x="0" y="0">
+        <tspan fill="#38bdf8">120 FPS</tspan> Hardware Compositing • 
+        <tspan fill="#10b981">Zero GC Reflow</tspan> on Warm Loops • 
+        <tspan fill="#ffffff">Sub-15ms</tspan> Wire Latency
+      </text>
+      <text x="896" y="0" text-anchor="end" fill="#64748b">
+        HARDWARE SYMPATHETIC ARCHITECTURE
+      </text>
+    </g>
+  </g>
+</svg>

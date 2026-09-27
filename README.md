@@ -1,176 +1,83 @@
 <div align="center">
 
-<!-- Museum Monograph Hero Header -->
+<!-- Linear / Vercel Monolith Animated Header -->
 <a href="https://shaarim.vercel.app">
-  <img src="assets/hero-monograph.svg" alt="Shaarim Alam — Monograph Treatise" width="100%" />
+  <img src="assets/header.svg" alt="Shaarim Alam — Monolith Header" width="100%" />
 </a>
 
-<br/><br/>
+<br/>
 
-<!-- Quick Telemetry Action Strip -->
 <p align="center">
   <a href="https://shaarim.vercel.app">
-    <img src="https://img.shields.io/badge/FOLIO-shaarim.vercel.app-0c0f16?style=flat-square&logo=vercel&logoColor=e5c158&labelColor=05070a" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/PORTFOLIO-shaarim.vercel.app-000000?style=flat-square&logo=vercel&logoColor=38bdf8&labelColor=080a0f" alt="Portfolio" />
   </a>
-  &nbsp;
+  &nbsp;&nbsp;
   <a href="mailto:shaarimalam888@gmail.com">
-    <img src="https://img.shields.io/badge/COMMISSION-Open%20For%20Work-0c0f16?style=flat-square&logo=gmail&logoColor=38bdf8&labelColor=05070a" alt="Email" />
+    <img src="https://img.shields.io/badge/COMMISSION-Open%20For%20Work-000000?style=flat-square&logo=gmail&logoColor=10b981&labelColor=080a0f" alt="Email" />
   </a>
-  &nbsp;
+  &nbsp;&nbsp;
   <a href="https://www.linkedin.com/in/shaarim-alam-a680b7349/">
-    <img src="https://img.shields.io/badge/NETWORK-LinkedIn-0c0f16?style=flat-square&logo=linkedin&logoColor=e5c158&labelColor=05070a" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/NETWORK-LinkedIn-000000?style=flat-square&logo=linkedin&logoColor=38bdf8&labelColor=080a0f" alt="LinkedIn" />
   </a>
-  &nbsp;
-  <img src="https://img.shields.io/badge/FRAME_BUDGET-120_FPS_Locked-0c0f16?style=flat-square&logo=speedtest&logoColor=34d399&labelColor=05070a" alt="120 FPS" />
-  &nbsp;
-  <img src="https://img.shields.io/badge/COORDINATES-Jamshedpur%2C%20IN-0c0f16?style=flat-square&labelColor=05070a" alt="Location" />
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/V--SYNC-120_FPS_Locked-000000?style=flat-square&logo=speedtest&logoColor=38bdf8&labelColor=080a0f" alt="120 FPS" />
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/LOCATION-Jamshedpur%2C%20IN-000000?style=flat-square&labelColor=080a0f" alt="Location" />
 </p>
 
 </div>
 
 ---
 
-### `§ 01` // PROLOGUE & MANIFESTO THEOREMS
+### ✦ About // Identity & Philosophy
 
-<table>
-<tr>
-<td width="36%" valign="top">
+**Diploma year two @ Netaji Subhas University. Full stack by trade, pixel perfectionist by nature.**
 
-#### `PROLOGUE // MOTIVATION`
-
-> *"Modern web applications did not fail due to network physics; they decayed through careless layout thrashing, bloated runtime dependencies, and uninspired motion."*
-
-We formulate a mechanical defense of tactile, zero-jank digital experiences: combining low-level systems execution (**C++**, **Lua**) with cutting-edge browser performance (**GSAP**, **WebGL Shaders**, and bi-directional **WebSocket** pipelines).
-
-</td>
-<td width="34%" valign="top">
-
-#### `MANIFESTO THEOREMS`
-
-* **`§.01` Motion is Immutable Physics**  
-  Interfaces must respect momentum, mass, and spring damping. Never trigger layout recalculation on warm 120Hz frame budgets.
-
-* **`§.02` Full-Stack Architectural Symmetry**  
-  From database indexing and REST/Socket event loops down to sub-pixel SVG rendering, craft spans the complete data journey.
-
-* **`§.03` Hardware-Sympathetic Web**  
-  Leverage GPU texture compositing, memory-pinned caches, and non-blocking I/O to deliver tangible physical weight to digital glass.
-
-</td>
-<td width="30%" valign="top">
-
-#### `SLAB // ZERO_COST_MAP`
-
-```cpp
-// 120Hz Spring Dynamics Solver
-#[inline(always)]
-pub fn solve_kinetic_step(
-    pos: &mut Vec2, 
-    vel: &mut Vec2, 
-    target: Vec2, 
-    stiffness: f32
-) -> Matrix4 {
-    let delta = target - *pos;
-    let damping = 2.0 * stiffness.sqrt() * 0.88;
-    *vel += (delta * stiffness - *vel * damping) * DT;
-    *pos += *vel * DT;
-    compose_hardware_transform(*pos)
-}
-```
-
-<div align="right">
-<sub><b>INSTRUCTION TARGET:</b> x86_64 // SIMD AVX-512</sub>
-</div>
-
-</td>
-</tr>
-</table>
+I architect complete products from database schemas, REST & WebSocket microservices, up to the interface people touch. My daily driver stack leans MERN, but I reach for C++ when I need deterministic control, Lua for automation scripting, and WebGL when engineering fluid, scroll-linked spatial motion that never drops below a 120 FPS frame budget.
 
 ---
 
-### `§ 02` // SELECTED OPEN-SOURCE FOLIOS
+### ✦ Selected Engineering Folios
+
+| | |
+| :--- | :--- |
+| <a href="https://github.com/Shaarim24/Beativa-Music-Player"><img src="assets/bento-beativa.svg" width="100%" alt="Beativa Music Player" /></a> | <a href="https://chattic-plum.vercel.app/"><img src="assets/bento-chattic.svg" width="100%" alt="Chattic Real-Time Messenger" /></a> |
+| <a href="https://shaarim.vercel.app"><img src="assets/bento-shaders.svg" width="100%" alt="Creative Shaders Lab" /></a> | <a href="https://github.com/Shaarim24"><img src="assets/bento-systems.svg" width="100%" alt="Veltrix Systems Lab" /></a> |
+
+---
+
+### ✦ Verified Capabilities & Runtime Stack
 
 <div align="center">
-<sub>SHOWCASING HIGH-PERFORMANCE MONOREPOS &amp; CURATED ARTIFACTS</sub>
+  <img src="assets/tech-stack.svg" width="100%" alt="Verified Tech Stack" />
 </div>
-
-<br/>
-
-<!-- Folio 01: Beativa -->
-<a href="https://github.com/Shaarim24/Beativa-Music-Player">
-  <img src="assets/folio-beativa.svg" alt="Folio 01 — Beativa Music Player" width="100%" />
-</a>
-
-<br/><br/>
-
-<!-- Folio 02: Chattic -->
-<a href="https://chattic-plum.vercel.app/">
-  <img src="assets/folio-chattic.svg" alt="Folio 02 — Chattic Messaging Platform" width="100%" />
-</a>
-
-<br/><br/>
-
-<!-- Folio 03: Creative Shaders Lab -->
-<a href="https://shaarim.vercel.app">
-  <img src="assets/folio-creative-lab.svg" alt="Folio 03 — Creative Shaders Lab" width="100%" />
-</a>
 
 ---
 
-### `§ 03` // ARCHITECTURAL SCHEMATIC // EXHIBIT B
+### ✦ Engineering Telemetry & Activity
 
 <div align="center">
-  <img src="assets/schematic-pipeline.svg" alt="Exhibit B — Zero-Jank Motion Pipeline" width="100%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Shaarim24&show_icons=true&theme=transparent&title_color=38bdf8&text_color=94a3b8&icon_color=38bdf8&border_color=1e293b&hide_border=false&count_private=true" height="155" alt="GitHub Stats" />
+  &nbsp;&nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shaarim24&layout=compact&theme=transparent&title_color=38bdf8&text_color=94a3b8&border_color=1e293b&hide_border=false" height="155" alt="Top Languages" />
 </div>
-
-<br/>
-
-<table>
-<tr>
-<td width="25%"><b>PAGE ALLOCATION:</b><br/><code>Static Arena (Zero-GC)</code></td>
-<td width="25%"><b>HARDWARE V-SYNC:</b><br/><code>120 FPS / 8.33ms Strict</code></td>
-<td width="25%"><b>LAYOUT REFLOW:</b><br/><code>0ms (Transform3D Layer)</code></td>
-<td width="25%"><b>CLS SCORE:</b><br/><code>0.000 (Mathematically Bound)</code></td>
-</tr>
-</table>
 
 ---
 
-### `§ 04` // CAPABILITY MATRIX & RUNTIME SPECIFICATIONS
-
-<div align="center">
-  <img src="assets/tech-matrix.svg" alt="Capability Matrix" width="100%" />
-</div>
-
-<br/>
-
----
-
-### `§ 05` // ANNUAL TEMPORAL CADENCE & COMMIT SPECTRUM
-
-<div align="center">
-  <img src="assets/cadence-matrix.svg" alt="Cadence Spectrum Matrix" width="100%" />
-</div>
-
-<br/>
-
----
-
-### `§ 06` // INSTITUTIONAL DOSSIER & COLOPHON
+### ✦ Institutional Dossier & Verification
 
 <details open>
-<summary><b>Inspect Architectural Provenance &amp; Verification Keys</b></summary>
+<summary><b>Inspect Hardware &amp; Academic Credentials</b></summary>
 <br/>
 
-| Parameter | Specification Record | Status |
+| Parameter | Provenance Record | Status |
 | :--- | :--- | :--- |
-| **Architect** | **Shaarim Alam** (`@Shaarim24`) | `Active Fellow` |
+| **Architect** | **Shaarim Alam** (`@Shaarim24`) | `Active Developer` |
 | **Education** | Netaji Subhas University — Diploma in Engineering (2024–2027) | `In Progress` |
 | **Coordinates** | Jamshedpur, Jharkhand, India (`22.8046° N, 86.2029° E`) | `Primary Node` |
-| **Primary Stack** | MERN (React, Node, Express, MongoDB) • C++20 • Three.js • GSAP 3 | `Production Verified` |
-| **Systems & Automation** | Lua 5.4 • yt-dlp • POSIX Shell • Linux Kernel Sympathy | `High Fidelity` |
-| **Motion Physics** | GSAP ScrollTrigger • Lenis Inertial Smoothing • GLSL Noise Shaders | `120Hz V-Sync` |
-| **Cryptographic Sign** | `0x7F1D·B24A·SHAARIM` | `GPG Verified` |
+| **Primary Stack** | MERN (React, Node.js, Express, MongoDB) • C++20 • WebGL / GLSL | `Production Ready` |
+| **Motion Physics** | GSAP 3 ScrollTrigger • Lenis Inertial Scroll • Three.js Shaders | `120Hz V-Sync` |
+| **Signing Key** | `0x7F1D·B24A·SHAARIM` | `GPG Verified` |
 | **Direct Dispatch** | `shaarimalam888@gmail.com` | `Response < 2h` |
 
 </details>
@@ -181,8 +88,8 @@ pub fn solve_kinetic_step(
 
 ```
 ========================================================================================
-            THE MONOGRAPH ARCHIVE // SHAARIM ALAM // VOL. 2026.1
-         Typeset in Instrument Serif & JetBrains Mono. Built for High Craft.
+             SHAARIM ALAM // LINEAR MONOLITH EDITION // VOL. 2026.1
+         High-Performance Engineering • Deterministic Code • Tactical Motion
 ========================================================================================
 ```
 
@@ -192,6 +99,6 @@ pub fn solve_kinetic_step(
 
 <br/>
 
-<sub>© 2026 SHAARIM ALAM. ALL RIGHTS DETERMINISTIC.</sub>
+<sub>© 2026 SHAARIM ALAM. ALL RIGHTS RESERVED.</sub>
 
 </div>
