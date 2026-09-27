@@ -3,55 +3,48 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Shaarim Alam — High-Performance Web &amp; Systems</title>
+  <title>Shaarim Alam — Minimalist Neofetch Profile</title>
   
   <!-- Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
   
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
       theme: {
         extend: {
           colors: {
-            "surface-void": "#03060a",
-            "surface-base": "#070b12",
-            "surface-card": "#0c1322",
-            "surface-card-hover": "#111b30",
-            "primary": "#00f0ff",
-            "primary-dim": "#38bdf8",
-            "emerald-accent": "#10b981",
-            "on-surface": "#f8fafc",
-            "on-surface-variant": "#94a3b8",
-            "lead-muted": "#64748b",
-            "border-dim": "rgba(255, 255, 255, 0.08)",
-            "border-glow": "rgba(0, 240, 255, 0.3)"
+            "github-bg": "#0d1117",
+            "github-card": "#161b22",
+            "github-border": "#30363d",
+            "github-text": "#c9d1d9",
+            "github-muted": "#8b949e"
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'Menlo', 'Consolas', 'monospace']
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Consolas', 'monospace']
           }
         }
       }
     };
   </script>
 
-  <!-- GSAP 3 & ScrollTrigger -->
+  <!-- GSAP 3 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #03060a;
-      color: #f8fafc;
+      background-color: #010409;
+      color: #c9d1d9;
       overflow-x: hidden;
-      scroll-behavior: smooth;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
     }
 
     /* Ambient Subtle Grid */
@@ -61,374 +54,112 @@
       background-size: 32px 32px;
     }
 
-    /* Custom subtle scrollbar */
-    ::-webkit-scrollbar {
-      width: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #03060a;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 2px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #334155;
-    }
-
-    /* Interactive Spotlight on Cards */
+    /* Smooth Spotlight */
     .spotlight-card {
       position: relative;
       overflow: hidden;
-      transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
     }
     .spotlight-card:hover {
-      border-color: rgba(0, 240, 255, 0.35);
-      box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.1);
-    }
-    .spotlight-card::before {
-      content: '';
-      position: absolute;
-      top: var(--mouse-y, -200px);
-      left: var(--mouse-x, -200px);
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(0, 240, 255, 0.1) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      transition: opacity 0.2s ease;
-      opacity: 0;
-      border-radius: 50%;
-      z-index: 1;
-    }
-    .spotlight-card:hover::before {
-      opacity: 1;
-    }
-
-    /* Scanning beam */
-    @keyframes beamSlide {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(250%); }
-    }
-    .beam-line {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 320px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #00f0ff, transparent);
-      animation: beamSlide 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      box-shadow: 0 12px 35px -10px rgba(56, 189, 248, 0.15);
     }
   </style>
 </head>
 
-<body class="font-sans antialiased selection:bg-primary/20 selection:text-white bg-grid-pattern min-h-screen">
+<body class="bg-grid-pattern min-h-screen py-12 px-4 sm:px-6 flex flex-col items-center justify-center">
 
   <!-- Floating Sticky Action Deck (Top Right) -->
   <aside class="fixed top-5 right-5 z-50 flex items-center gap-3">
     <!-- Copy Raw Markdown Button -->
-    <button id="copyReadmeBtn" class="flex items-center gap-2 px-4 py-2 bg-[#0c1322]/95 backdrop-blur-md hover:bg-primary hover:text-black border border-white/10 hover:border-primary text-xs font-mono font-medium transition-all shadow-xl rounded">
+    <button id="copyReadmeBtn" class="flex items-center gap-2 px-4 py-2 bg-[#161b22]/95 backdrop-blur-md hover:bg-white hover:text-black border border-github-border text-xs font-mono font-medium transition-all shadow-xl rounded-md">
       <span class="material-symbols-outlined text-sm">content_copy</span>
       <span class="text-[11px] uppercase tracking-wider font-semibold">Copy README.md</span>
     </button>
 
     <!-- Jump to GitHub Profile -->
-    <a href="https://github.com/Shaarim24" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-4 py-2 bg-[#0c1322]/95 backdrop-blur-md border border-white/10 hover:border-white/30 text-xs font-mono text-white transition-all shadow-xl rounded">
+    <a href="https://github.com/Shaarim24" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-4 py-2 bg-[#161b22]/95 backdrop-blur-md border border-github-border hover:border-white/30 text-xs font-mono text-white transition-all shadow-xl rounded-md">
       <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
-      <span class="text-[11px] uppercase tracking-wider">GitHub</span>
+      <span class="text-[11px] uppercase tracking-wider">GitHub Profile</span>
     </a>
   </aside>
 
   <!-- Live Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 bg-surface-card border border-primary text-white font-mono text-xs flex items-center gap-2.5 shadow-2xl rounded transform translate-y-24 opacity-0 transition-all duration-300">
-    <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-    <span id="toastMsg">README.md copied to clipboard!</span>
+  <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 bg-github-card border border-primary text-white font-mono text-xs flex items-center gap-2.5 shadow-2xl rounded-md transform translate-y-24 opacity-0 transition-all duration-300">
+    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+    <span id="toastMsg">README.md copied to clipboard! Ready to paste.</span>
   </div>
 
-  <!-- MAIN CONTAINER -->
-  <main class="relative z-10 min-h-screen py-10 px-4 sm:px-8 md:px-12 flex flex-col items-center">
-    
-    <div class="w-full max-w-4xl mx-auto space-y-8">
+  <!-- MAIN GITHUB-STYLE CONTAINER -->
+  <div class="w-full max-w-[960px] mx-auto space-y-6">
 
-      <!-- ===================================================================== -->
-      <!-- SECTION 1: HERO MONOLITH                                              -->
-      <!-- ===================================================================== -->
-      <section class="relative border border-primary/25 bg-surface-base p-8 sm:p-10 rounded-lg shadow-2xl spotlight-card overflow-hidden">
-        <div class="beam-line"></div>
+    <!-- Top Label -->
+    <div class="flex items-center justify-between text-xs font-mono text-github-muted px-2">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-white font-semibold">Shaarim24</span> / <span class="text-github-muted">README.md</span>
+      </div>
+      <div class="text-[11px]">
+        Minimalist Neofetch Spec
+      </div>
+    </div>
 
-        <!-- Meta status line -->
-        <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10 font-mono text-xs text-lead-muted">
-          <div class="flex items-center gap-2 px-3 py-1 bg-surface-card border border-emerald-accent/30 rounded">
-            <span class="w-2 h-2 rounded-full bg-emerald-accent animate-pulse"></span>
-            <span class="text-emerald-accent text-[11px] font-semibold tracking-wide">AVAILABLE FOR WORK</span>
-          </div>
+    <!-- PROFILE README CARD -->
+    <div class="p-8 sm:p-10 bg-github-bg border border-github-border rounded-xl shadow-2xl spotlight-card flex flex-col items-center text-center">
 
-          <div class="flex items-center gap-4 text-[11px]">
-            <span>LOC: <strong class="text-white">22.80°N, 86.20°E</strong></span>
-            <span>•</span>
-            <span>V-SYNC: <strong class="text-primary font-mono">120 FPS</strong></span>
-          </div>
-        </div>
-
-        <!-- Title & Bio -->
-        <div class="pt-8 space-y-4">
-          <p class="font-mono text-xs uppercase tracking-[0.25em] text-primary font-bold">
-            FULL-STACK DEVELOPER  •  SYSTEMS  •  CREATIVE MOTION
-          </p>
-
-          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Shaarim Alam<span class="text-primary">.</span>
-          </h1>
-
-          <p class="text-sm sm:text-base text-on-surface-variant font-light max-w-2xl leading-relaxed">
-            Diploma year two @ Netaji Subhas University. Full stack by trade, pixel perfectionist by nature. Architecting complete products across MERN, C++ audio pipelines, and 120 FPS WebGL shaders.
-          </p>
-
-          <!-- Quick Action Links -->
-          <div class="pt-4 flex flex-wrap items-center gap-3 font-mono text-xs">
-            <a href="https://shaarim.vercel.app" target="_blank" rel="noreferrer" class="px-5 py-2.5 bg-primary text-black font-bold hover:bg-white transition-colors flex items-center gap-1.5 rounded">
-              <span>Explore Portfolio</span>
-              <span class="material-symbols-outlined text-sm">arrow_outward</span>
-            </a>
-            <a href="https://www.linkedin.com/in/shaarim-alam-a680b7349/" target="_blank" rel="noreferrer" class="px-5 py-2.5 bg-surface-card border border-white/10 text-white hover:border-primary/50 transition-colors flex items-center gap-1.5 rounded">
-              <span>LinkedIn</span>
-            </a>
-            <a href="mailto:shaarimalam888@gmail.com" class="px-5 py-2.5 bg-surface-card border border-white/10 text-white hover:border-primary/50 transition-colors flex items-center gap-1.5 rounded">
-              <span>Contact Dispatch</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================================================================== -->
-      <!-- SECTION 2: SELECTED ENGINEERING FOLIOS                                -->
-      <!-- ===================================================================== -->
-      <section class="space-y-4">
-        <div class="flex items-center justify-between pb-2 border-b border-white/10 font-mono text-xs">
-          <span class="text-primary font-bold tracking-widest uppercase">✦ SELECTED ENGINEERING FOLIOS</span>
-          <span class="text-lead-muted">3 PRODUCTION REPOSITORIES</span>
-        </div>
-
-        <div class="space-y-4">
-          
-          <!-- Folio 1: Beativa Music Player -->
-          <article class="p-7 bg-surface-base border border-primary/20 hover:border-primary/60 transition-all spotlight-card rounded-lg space-y-4 group shadow-xl">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
-              <div class="flex items-center gap-3">
-                <span class="text-primary font-bold tracking-wide">01 // C++20 AUDIO ENGINE</span>
-                <span class="text-white/20">|</span>
-                <span class="text-lead-muted text-[11px]">LIGHTWEIGHT TERMINAL CLIENT</span>
-              </div>
-              <span class="text-primary-dim font-mono text-[11px]">&lt; 1.8ms STARTUP</span>
-            </div>
-
-            <div class="space-y-1.5">
-              <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
-                Beativa Music Player
-              </h3>
-              <p class="text-sm text-on-surface-variant leading-relaxed font-light">
-                High-performance terminal desktop audio client. Integrates yt-dlp multithreaded caching, zero-jitter DAC playback pipeline, and low-latency C++20 audio decoding.
-              </p>
-            </div>
-
-            <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
-              <div class="flex flex-wrap gap-2 font-mono text-xs">
-                <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">C++20</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-slate-300 rounded text-[11px]">yt-dlp</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-slate-300 rounded text-[11px]">Terminal UI</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-emerald-accent/30 text-emerald-accent rounded text-[11px]">Zero Jitter</span>
-              </div>
-              
-              <a href="https://github.com/Shaarim24/Beativa-Music-Player" target="_blank" rel="noreferrer" class="font-mono text-xs text-primary font-semibold hover:underline flex items-center gap-1.5">
-                <span>INSPECT REPO</span>
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Folio 2: Chattic Messenger -->
-          <article class="p-7 bg-surface-base border border-primary/20 hover:border-primary/60 transition-all spotlight-card rounded-lg space-y-4 group shadow-xl">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
-              <div class="flex items-center gap-3">
-                <span class="text-primary font-bold tracking-wide">02 // REAL-TIME NETWORK</span>
-                <span class="text-white/20">|</span>
-                <span class="text-lead-muted text-[11px]">FULL-STACK MESSAGING PLATFORM</span>
-              </div>
-              <span class="text-emerald-accent font-mono text-[11px]">&lt; 15ms WIRE SPEED</span>
-            </div>
-
-            <div class="space-y-1.5">
-              <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
-                Chattic Real-Time Messenger
-              </h3>
-              <p class="text-sm text-on-surface-variant leading-relaxed font-light">
-                High-throughput WebSocket messaging architecture. Features grouped channels, direct messaging, live media file dispatch, real-time reactions, and optimistic state persistence.
-              </p>
-            </div>
-
-            <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
-              <div class="flex flex-wrap gap-2 font-mono text-xs">
-                <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">React</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-slate-300 rounded text-[11px]">Socket.IO</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-slate-300 rounded text-[11px]">Node.js</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-emerald-accent/30 text-emerald-accent rounded text-[11px]">MongoDB</span>
-              </div>
-              
-              <a href="https://chattic-plum.vercel.app/" target="_blank" rel="noreferrer" class="font-mono text-xs text-primary font-semibold hover:underline flex items-center gap-1.5">
-                <span>LAUNCH LIVE APP</span>
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Folio 3: Creative Shaders -->
-          <article class="p-7 bg-surface-base border border-primary/20 hover:border-primary/60 transition-all spotlight-card rounded-lg space-y-4 group shadow-xl">
-            <div class="flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
-              <div class="flex items-center gap-3">
-                <span class="text-primary font-bold tracking-wide">03 // SPATIAL MOTION</span>
-                <span class="text-white/20">|</span>
-                <span class="text-lead-muted text-[11px]">CREATIVE COMPUTING &amp; SHADERS</span>
-              </div>
-              <span class="text-primary font-mono text-[11px]">120 FPS BUDGET</span>
-            </div>
-
-            <div class="space-y-1.5">
-              <h3 class="text-2xl font-bold text-white group-hover:text-primary transition-colors">
-                Creative Shaders &amp; Motion Lab
-              </h3>
-              <p class="text-sm text-on-surface-variant leading-relaxed font-light">
-                Hardware-accelerated graphics showcase. Custom GLSL fragment shaders, Three.js particle systems, and inertia-driven GSAP scroll physics running strictly within a 120 FPS budget.
-              </p>
-            </div>
-
-            <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
-              <div class="flex flex-wrap gap-2 font-mono text-xs">
-                <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">Three.js</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-slate-300 rounded text-[11px]">GLSL Shaders</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-slate-300 rounded text-[11px]">GSAP 3</span>
-                <span class="px-2.5 py-1 bg-surface-card border border-emerald-accent/30 text-emerald-accent rounded text-[11px]">120Hz V-Sync</span>
-              </div>
-              
-              <a href="https://shaarim.vercel.app" target="_blank" rel="noreferrer" class="font-mono text-xs text-primary font-semibold hover:underline flex items-center gap-1.5">
-                <span>VIEW SHADER LAB</span>
-                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- ===================================================================== -->
-      <!-- SECTION 3: CAPABILITIES STRIP                                        -->
-      <!-- ===================================================================== -->
-      <section class="p-8 bg-surface-base border border-primary/20 rounded-lg space-y-6 shadow-xl">
-        <div class="flex items-center justify-between pb-3 border-b border-white/10 font-mono text-xs">
-          <span class="text-primary font-bold uppercase tracking-wider">✦ VERIFIED RUNTIME CAPABILITIES</span>
-          <span class="text-emerald-accent font-semibold">PRODUCTION GRADE</span>
-        </div>
+      <!-- Side-by-Side Table Area -->
+      <div class="w-full flex flex-col md:flex-row items-center justify-center gap-6 pb-6">
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 font-mono text-xs">
-          <div class="space-y-2.5">
-            <h4 class="text-lead-muted text-[10px] tracking-wider uppercase font-semibold">01 // LANGUAGES</h4>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">C++20</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">JavaScript</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">TypeScript</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Lua 5.4</span>
-            </div>
-          </div>
-
-          <div class="space-y-2.5">
-            <h4 class="text-lead-muted text-[10px] tracking-wider uppercase font-semibold">02 // WEB &amp; REALTIME</h4>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">React</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Node.js</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">Socket.IO</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-emerald-accent/30 text-emerald-accent rounded text-[11px]">MongoDB</span>
-            </div>
-          </div>
-
-          <div class="space-y-2.5">
-            <h4 class="text-lead-muted text-[10px] tracking-wider uppercase font-semibold">03 // GRAPHICS &amp; MOTION</h4>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 bg-surface-card border border-primary/30 text-primary rounded text-[11px]">Three.js</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">GLSL</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-emerald-accent/30 text-emerald-accent rounded text-[11px]">GSAP 3</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Lenis</span>
-            </div>
-          </div>
-
-          <div class="space-y-2.5">
-            <h4 class="text-lead-muted text-[10px] tracking-wider uppercase font-semibold">04 // SYSTEMS &amp; INFRA</h4>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Linux</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Git</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Vite</span>
-              <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-white rounded text-[11px]">Vercel</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================================================================== -->
-      <!-- SECTION 4: TELEMETRY & CODEBASE METRICS                               -->
-      <!-- ===================================================================== -->
-      <section class="p-8 bg-surface-base border border-primary/20 rounded-lg space-y-6 shadow-xl">
-        <div class="flex items-center justify-between pb-3 border-b border-white/10 font-mono text-xs">
-          <span class="text-primary font-bold uppercase tracking-wider">✦ TELEMETRY &amp; CODEBASE METRICS</span>
-          <span class="text-emerald-accent font-semibold">LIVE VERIFIED</span>
+        <!-- Left: Avatar -->
+        <div class="w-full max-w-[370px] aspect-square rounded-xl overflow-hidden border border-github-border bg-[#111722] shadow-lg flex-shrink-0">
+          <img src="https://github.com/Shaarim24.png" alt="Shaarim Alam" class="w-full h-full object-cover object-center" />
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-          <div class="p-4 bg-surface-card border border-white/10 rounded">
-            <p class="text-lead-muted text-[10px]">PUBLIC REPOSITORIES</p>
-            <p class="text-2xl font-bold text-white pt-1">11+</p>
-            <p class="text-primary text-[10px] pt-1">Active codebases on GitHub</p>
-          </div>
-          <div class="p-4 bg-surface-card border border-white/10 rounded">
-            <p class="text-lead-muted text-[10px]">PRIMARY FOCUS</p>
-            <p class="text-2xl font-bold text-white pt-1">MERN &amp; C++</p>
-            <p class="text-primary text-[10px] pt-1">Web applications &amp; audio pipelines</p>
-          </div>
-          <div class="p-4 bg-surface-card border border-white/10 rounded">
-            <p class="text-lead-muted text-[10px]">MOTION STANDARD</p>
-            <p class="text-2xl font-bold text-emerald-accent pt-1">120 FPS</p>
-            <p class="text-emerald-accent text-[10px] pt-1">Strict hardware frame budget</p>
-          </div>
+        <!-- Right: Terminal info-card.svg -->
+        <div class="w-full max-w-[490px] flex-shrink-0 shadow-lg rounded-xl overflow-hidden">
+          <img src="./info-card.svg" alt="Shaarim Info" class="w-full h-auto block" />
         </div>
-      </section>
 
-      <!-- ===================================================================== -->
-      <!-- FOOTER                                                               -->
-      <!-- ===================================================================== -->
-      <footer class="pt-8 pb-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-lead-muted">
-        <div>
-          SHAARIM ALAM // HIGH-PERFORMANCE WEB &amp; SYSTEMS // VOL. 2026
-        </div>
-        <div class="flex items-center gap-6 text-white">
-          <a href="https://shaarim.vercel.app" target="_blank" rel="noreferrer" class="hover:text-primary transition-colors">Portfolio</a>
-          <a href="https://github.com/Shaarim24" target="_blank" rel="noreferrer" class="hover:text-primary transition-colors">GitHub</a>
-          <a href="mailto:shaarimalam888@gmail.com" class="hover:text-primary transition-colors">Email</a>
-        </div>
-      </footer>
+      </div>
+
+      <div class="w-full max-w-[860px] border-b border-github-border/60 my-4"></div>
+
+      <!-- Identity -->
+      <div class="space-y-2 pt-2">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+          Shaarim Alam
+        </h2>
+
+        <p class="text-sm sm:text-base text-github-text font-normal">
+          <strong>Fullstack Developer · Systems Enthusiast · Creative Coder</strong>
+        </p>
+      </div>
+
+      <!-- Social Badges Strip -->
+      <div class="pt-6 flex flex-wrap items-center justify-center gap-3">
+        <a href="https://shaarim.vercel.app/" target="_blank" rel="noreferrer" class="hover:opacity-90 transition-opacity">
+          <img src="https://img.shields.io/badge/Portfolio-shaarim.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/shaarim-alam-a680b7349/" target="_blank" rel="noreferrer" class="hover:opacity-90 transition-opacity">
+          <img src="https://img.shields.io/badge/LinkedIn-Shaarim_Alam-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+        </a>
+
+        <a href="mailto:shaarimalam888@gmail.com" class="hover:opacity-90 transition-opacity">
+          <img src="https://img.shields.io/badge/Email-shaarimalam888@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+        </a>
+      </div>
 
     </div>
-  </main>
+
+    <!-- Live Preview Footer Note -->
+    <div class="text-center font-mono text-xs text-github-muted pt-4">
+      Conforms strictly to the minimal side-by-side terminal format • Pushed to <strong>Shaarim24/Shaarim24</strong>
+    </div>
+
+  </div>
 
   <!-- Interactive Logic -->
   <script>
-    // Spotlight Card Mouse Tracker
-    document.querySelectorAll('.spotlight-card').forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-      });
-    });
-
     // Copy README.md Handler
     const copyReadmeBtn = document.getElementById('copyReadmeBtn');
     const toast = document.getElementById('toast');
@@ -456,10 +187,12 @@
     });
 
     // Smooth Entrance with GSAP
-    gsap.fromTo("article.spotlight-card", 
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out", clearProps: "opacity,transform" }
-    );
+    gsap.from(".spotlight-card", {
+      opacity: 0,
+      y: 20,
+      duration: 0.7,
+      ease: "power2.out"
+    });
   </script>
 </body>
 </html>
