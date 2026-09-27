@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<td valign="top"><img src="https://github.com/Shaarim24.png" width="370" alt="Shaarim Alam" style="border-radius:12px;" /></td>
+<td valign="top"><img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/ascii-art.png" width="370" alt="Shaarim Alam" style="border-radius:12px;" /></td>
 <td valign="top"><img src="./info-card.svg" width="490" alt="Shaarim Info" /></td>
 </tr>
 </table>
