@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 150" width="100%" height="auto">
+  <defs>
+    <linearGradient id="statsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14" />
+      <stop offset="100%" stop-color="#05070c" />
+    </linearGradient>
+    <style>
+      .label { font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace; font-size: 10px; fill: #64748b; letter-spacing: 1px; }
+      .val { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif; font-size: 16px; font-weight: 700; fill: #ffffff; }
+      .header-title { font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace; font-size: 11px; fill: #ffffff; font-weight: 700; letter-spacing: 1.5px; }
+      .lang-label { font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace; font-size: 10px; fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <rect width="900" height="150" fill="url(#statsBg)" rx="6" />
+  <rect x="0.5" y="0.5" width="899" height="149" fill="none" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1" rx="6" />
+
+  <!-- Header line -->
+  <g transform="translate(32, 22)">
+    <text x="0" y="0" class="header-title">✦ TELEMETRY &amp; CODEBASE METRICS</text>
+    <text x="836" y="0" class="label" fill="#10b981" text-anchor="end">LIVE VERIFIED</text>
+    <line x1="0" y1="10" x2="836" y2="10" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+  </g>
+
+  <!-- Left Stats Columns -->
+  <g transform="translate(32, 54)">
+    <!-- Metric 1: Repos -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="10" class="label">PUBLIC REPOSITORIES</text>
+      <text x="0" y="32" class="val">11+</text>
+      <text x="0" y="50" class="label" fill="#38bdf8">Active codebases</text>
+    </g>
+
+    <!-- Metric 2: Primary Focus -->
+    <g transform="translate(180, 0)">
+      <text x="0" y="10" class="label">PRIMARY FOCUS</text>
+      <text x="0" y="32" class="val">MERN &amp; C++</text>
+      <text x="0" y="50" class="label" fill="#38bdf8">Web &amp; Systems</text>
+    </g>
+
+    <!-- Metric 3: Motion Standard -->
+    <g transform="translate(360, 0)">
+      <text x="0" y="10" class="label">MOTION STANDARD</text>
+      <text x="0" y="32" class="val">120 FPS</text>
+      <text x="0" y="50" class="label" fill="#10b981">Hardware V-Sync</text>
+    </g>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="530" y1="46" x2="530" y2="132" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+
+  <!-- Right Language Breakdown -->
+  <g transform="translate(560, 54)">
+    <text x="0" y="10" class="label">RUNTIME CODE DISTRIBUTION</text>
+
+    <!-- Segmented Bar -->
+    <g transform="translate(0, 20)">
+      <rect x="0" y="0" width="130" height="8" fill="#38bdf8" rx="2" />
+      <rect x="134" y="0" width="85" height="8" fill="#10b981" rx="2" />
+      <rect x="223" y="0" width="55" height="8" fill="#f59e0b" rx="2" />
+      <rect x="282" y="0" width="26" height="8" fill="#a855f7" rx="2" />
+    </g>
+
+    <!-- Legend -->
+    <g transform="translate(0, 48)">
+      <circle cx="4" cy="-3" r="3.5" fill="#38bdf8" />
+      <text x="14" y="0" class="lang-label">JavaScript (42%)</text>
+
+      <circle cx="114" cy="-3" r="3.5" fill="#10b981" />
+      <text x="124" y="0" class="lang-label">C++20 (28%)</text>
+
+      <circle cx="204" cy="-3" r="3.5" fill="#f59e0b" />
+      <text x="214" y="0" class="lang-label">WebGL (18%)</text>
+
+      <circle cx="280" cy="-3" r="3.5" fill="#a855f7" />
+      <text x="290" y="0" class="lang-label">Lua (12%)</text>
+    </g>
+  </g>
+</svg>
