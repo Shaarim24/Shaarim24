@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Shaarim Alam — Monograph & README Archive</title>
+  
+  <!-- Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-lowest": "#05070a",
+            "surface-base": "#080b10",
+            "surface-card": "#0f131a",
+            "surface-card-hover": "#171c26",
+            "primary": "#d0bcff",
+            "primary-container": "#4f378b",
+            "secondary": "#5eead4",
+            "secondary-dark": "#0d9488",
+            "tertiary": "#f9a8d4",
+            "on-surface": "#e6e9f0",
+            "on-surface-variant": "#8f96a6",
+            "lead-muted": "#636c7e",
+            "outline-dim": "rgba(255, 255, 255, 0.08)",
+            "outline-strong": "rgba(255, 255, 255, 0.16)",
+            "warm-sand": "#e8e5dc",
+            "gold-accent": "#fde047",
+            "emerald-accent": "#34d399"
+          },
+          fontFamily: {
+            serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+            mono: ['"JetBrains Mono"', 'Menlo', 'Consolas', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- GSAP 3 & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #06080c;
+      color: #e6e9f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Ambient Blueprint Dot Grid */
+    .bg-dot-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .archival-hairline {
+      background: linear-gradient(90deg, rgba(208,188,255,0.4) 0%, rgba(94,234,212,0.2) 35%, rgba(255,255,255,0.04) 100%);
+    }
+
+    /* Custom subtle scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #06080c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1c2230;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2b3345;
+    }
+
+    /* Interactive Spotlight on Cards */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-card::before {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, -200px);
+      left: var(--mouse-x, -200px);
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(208, 188, 255, 0.12) 0%, rgba(94, 234, 212, 0.04) 40%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+      opacity: 0;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .spotlight-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Rotating orbits */
+    @keyframes spinClockwise {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinCounterClockwise {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    .animate-spin-slow {
+      animation: spinClockwise 32s linear infinite;
+    }
+    .animate-spin-reverse {
+      animation: spinCounterClockwise 22s linear infinite;
+    }
+
+    /* Laser scanline across schematic */
+    @keyframes scanlineAnim {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+    .scanline {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #5eead4, transparent);
+      animation: scanlineAnim 4s ease-in-out infinite;
+      opacity: 0.6;
+    }
+
+    /* Audio wave bounce */
+    @keyframes waveBounce {
+      0%, 100% { transform: scaleY(0.3); }
+      50% { transform: scaleY(1); }
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased selection:bg-primary/25 selection:text-white">
+
+  <!-- Ambient Background Canvas (Kinetic Particle Lattice) -->
+  <canvas id="kineticCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- Floating Sticky Action Deck (Top Right) -->
+  <aside class="fixed top-5 right-5 z-50 flex items-center gap-3">
+    <!-- Sound Synth Toggle -->
+    <button id="soundToggleBtn" class="flex items-center gap-2 px-3 py-1.5 bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 hover:border-secondary/60 text-xs font-mono text-on-surface-variant hover:text-secondary transition-all shadow-xl rounded-sm group" title="Toggle tactile synthesized feedback">
+      <span class="w-2 h-2 rounded-full bg-lead-muted group-hover:bg-secondary transition-colors" id="soundLed"></span>
+      <span class="material-symbols-outlined text-sm">volume_up</span>
+      <span class="hidden sm:inline text-[11px] uppercase tracking-wider">Tactile Audio</span>
+    </button>
+
+    <!-- Copy Raw Markdown Button -->
+    <button id="copyReadmeBtn" class="flex items-center gap-2 px-3.5 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-black border border-primary/30 text-xs font-mono font-medium transition-all shadow-xl rounded-sm">
+      <span class="material-symbols-outlined text-sm">content_copy</span>
+      <span class="text-[11px] uppercase tracking-wider font-semibold">Copy README.md</span>
+    </button>
+
+    <!-- Jump to GitHub Profile -->
+    <a href="https://github.com/Shaarim24" target="_blank" rel="noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 hover:border-white/40 text-xs font-mono text-white transition-all shadow-xl rounded-sm">
+      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+      <span class="text-[11px] uppercase tracking-wider">GitHub</span>
+    </a>
+  </aside>
+
+  <!-- Live Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 bg-surface-card border border-primary/50 text-white font-mono text-xs flex items-center gap-2.5 shadow-2xl rounded-sm transform translate-y-24 opacity-0 transition-all duration-300">
+    <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+    <span id="toastMsg">README.md Markdown copied to clipboard!</span>
+  </div>
+
+  <!-- MAIN DOCUMENT SHELL (Exact Museum Monograph Layout) -->
+  <div class="relative z-10 min-h-screen py-10 px-4 sm:px-8 md:px-12 lg:px-16 flex flex-col items-center">
+    
+    <div class="w-full max-w-5xl mx-auto space-y-16">
+
+      <!-- ===================================================================== -->
+      <!-- SECTION 1: STRIPE PRESS MONOGRAPH HERO COVER                         -->
+      <!-- ===================================================================== -->
+      <section id="heroSection" class="relative border border-white/10 bg-surface-lowest overflow-hidden shadow-2xl spotlight-card rounded-sm">
+        
+        <!-- Subtle Scanline Effect -->
+        <div class="scanline"></div>
+
+        <!-- Corner Spec Inscriptions -->
+        <div class="absolute top-0 left-0 text-[9px] font-mono text-lead-muted px-3 py-1.5 tracking-[0.2em] pointer-events-none border-b border-r border-white/10 bg-surface-lowest/90">
+          SPEC // SHAARIM NO. 024
+        </div>
+        <div class="absolute top-0 right-0 text-[9px] font-mono text-primary px-3 py-1.5 tracking-[0.2em] pointer-events-none border-b border-l border-white/10 bg-surface-lowest/90">
+          ARCHIVAL TREATISE // VOL. 2026.1
+        </div>
+        <div class="absolute bottom-0 left-0 text-[9px] font-mono text-lead-muted px-3 py-1.5 tracking-[0.2em] pointer-events-none border-t border-r border-white/10 bg-surface-lowest/90">
+          FRAME BUDGET: 8.33ms (120 FPS)
+        </div>
+        <div class="absolute bottom-0 right-0 text-[9px] font-mono text-secondary px-3 py-1.5 tracking-[0.2em] pointer-events-none border-t border-l border-white/10 bg-surface-lowest/90">
+          ZERO-JANK COMPOSITOR PIPELINE
+        </div>
+
+        <div class="p-8 sm:p-12 md:p-14 relative z-10">
+          
+          <!-- Monograph Breadcrumb Header -->
+          <div class="flex flex-wrap items-center gap-3 font-mono text-xs tracking-widest uppercase text-lead-muted mb-8 pt-3 border-b border-white/10 pb-4">
+            <span class="inline-block w-2 h-2 bg-primary animate-pulse"></span>
+            <span class="text-white font-medium">README.md</span>
+            <span class="text-lead-muted">/</span>
+            <span class="text-on-surface-variant font-medium">Shaarim Alam</span>
+            <span class="text-lead-muted">/</span>
+            <span class="text-primary font-mono font-medium">Curated Monograph Feature</span>
+            <span class="ml-auto hidden md:inline font-mono text-[10px] tracking-widest text-secondary border-b border-dotted border-secondary/40 pb-0.5">
+              120Hz HIGH-CRAFT ENGINE
+            </span>
+          </div>
+
+          <!-- Editorial Grid: Grand Title & Precision Vector Gyroscope -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end pb-12 border-b border-white/10">
+            
+            <!-- Left Headline Column -->
+            <div class="lg:col-span-8 space-y-4">
+              <p class="font-mono text-[10px] uppercase tracking-[0.26em] text-secondary font-semibold hero-tag">
+                TREATISE ON MOTION DYNAMICS &amp; FULL-STACK ARCHITECTURE
+              </p>
+              
+              <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-tight text-white leading-[1.04] hero-title">
+                On Motion Physics,<br/>
+                <span class="italic text-primary">Tactile Interfaces</span>, and the<br/>
+                Geometry of <span class="italic text-warm-sand">Full-Stack Code</span>.
+              </h1>
+
+              <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-lead-muted">
+                <span class="text-white font-medium">Shaarim Alam</span>
+                <span>•</span>
+                <span class="text-primary">Netaji Subhas University</span>
+                <span>•</span>
+                <span class="text-secondary">Jamshedpur [22.80°N, 86.20°E]</span>
+              </div>
+            </div>
+
+            <!-- Right Vector Gyroscope Exhibit Plate -->
+            <div class="lg:col-span-4 flex flex-col justify-end">
+              <div id="gyroscopeCard" class="border border-white/15 p-5 bg-surface-card/90 relative rounded-sm shadow-xl transition-transform duration-300">
+                <div class="flex items-center justify-between font-mono text-[10px] text-lead-muted uppercase tracking-wider mb-3">
+                  <span>Fig. 1.1 — Kinetic Gyro</span>
+                  <span class="text-secondary font-mono text-[9px] px-1.5 py-0.5 bg-secondary/10 border border-secondary/20">144 FPS V-SYNC</span>
+                </div>
+
+                <!-- Gyroscope Interactive SVG -->
+                <svg class="w-full h-auto text-outline stroke-current fill-none" viewBox="0 0 240 140">
+                  <defs>
+                    <radialGradient cx="50%" cy="50%" id="ringGlowDom" r="50%">
+                      <stop offset="0%" stop-color="#d0bcff" stop-opacity="0.3"></stop>
+                      <stop offset="100%" stop-color="#090b10" stop-opacity="0"></stop>
+                    </radialGradient>
+                  </defs>
+                  
+                  <!-- Radial ambient glow -->
+                  <circle cx="120" cy="70" fill="url(#ringGlowDom)" r="52" stroke="none"></circle>
+                  
+                  <!-- Crosshairs -->
+                  <line stroke="rgba(255,255,255,0.08)" stroke-dasharray="2,2" stroke-width="0.75" x1="120" x2="120" y1="10" y2="130"></line>
+                  <line stroke="rgba(255,255,255,0.08)" stroke-dasharray="2,2" stroke-width="0.75" x1="40" x2="200" y1="70" y2="70"></line>
+                  
+                  <!-- Orbiting Rings -->
+                  <circle cx="120" cy="70" r="50" stroke="rgba(255,255,255,0.12)" stroke-dasharray="3,3" stroke-width="0.75"></circle>
+                  <circle cx="120" cy="70" r="36" stroke="rgba(208, 188, 255, 0.4)" stroke-width="1"></circle>
+                  <circle cx="120" cy="70" r="18" stroke="rgba(94, 234, 212, 0.3)" stroke-width="0.75"></circle>
+                  
+                  <!-- Animated Clockwise Nodes -->
+                  <g class="animate-spin-slow origin-[120px_70px]">
+                    <line stroke="rgba(208, 188, 255, 0.25)" stroke-width="0.8" x1="120" x2="90" y1="34" y2="88"></line>
+                    <line stroke="rgba(94, 234, 212, 0.25)" stroke-width="0.8" x1="120" x2="150" y1="34" y2="88"></line>
+                    <line stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" x1="90" x2="150" y1="52" y2="88"></line>
+                    <line stroke="rgba(208, 188, 255, 0.2)" stroke-width="0.8" x1="90" x2="150" y1="88" y2="52"></line>
+
+                    <circle cx="120" cy="34" fill="#d0bcff" r="3.5"></circle>
+                    <circle cx="120" cy="34" r="6" stroke="#d0bcff" stroke-opacity="0.4" stroke-width="0.5"></circle>
+                    <circle cx="150" cy="52" fill="#5eead4" r="3"></circle>
+                    <circle cx="150" cy="88" fill="#d0bcff" r="3.5"></circle>
+                    <circle cx="120" cy="106" fill="#9ba1b0" r="3"></circle>
+                    <circle cx="90" cy="88" fill="#f9a8d4" r="3.5"></circle>
+                    <circle cx="90" cy="52" fill="#5eead4" r="3"></circle>
+                  </g>
+
+                  <!-- Center Kinetic Anchor -->
+                  <circle cx="120" cy="70" r="5" fill="#11151c" stroke="#d0bcff" stroke-width="1.5"></circle>
+                  <circle cx="120" cy="70" r="2" fill="#5eead4"></circle>
+                  <text fill="#ffffff" font-family="'JetBrains Mono'" font-size="7" font-weight="600" letter-spacing="1.5" text-anchor="middle" x="120" y="73">CORE</text>
+                  
+                  <text fill="#8f96a6" font-family="'JetBrains Mono'" font-size="6" text-anchor="middle" x="120" y="24">VERLET [120Hz]</text>
+                  <text fill="#5eead4" font-family="'JetBrains Mono'" font-size="6" text-anchor="start" x="195" y="72">Δ 0.12ms</text>
+                </svg>
+
+                <div class="mt-2.5 pt-2 border-t border-white/10 font-mono text-[10px] text-lead-muted flex justify-between items-center">
+                  <span>Event Loop Jitter</span>
+                  <span class="text-primary font-mono">0.00% // Deterministic</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Essay Columns & Manifesto Theorems: Art-Book Typography -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pt-10">
+            
+            <!-- Left Abstract -->
+            <div class="md:col-span-4 space-y-4">
+              <span class="font-mono text-[10px] text-primary uppercase tracking-[0.2em] font-semibold">
+                PROLOGUE // MOTIVATION
+              </span>
+              <p class="font-serif italic text-2xl text-warm-sand leading-snug">
+                "Modern digital experiences did not fail due to network physics; they decayed through bloated dependencies and unchecked layout thrashing."
+              </p>
+              <div class="font-sans text-xs text-on-surface-variant leading-relaxed pt-1">
+                Full Stack by trade, pixel perfectionist by nature. Architecting end-to-end products across REST/WebSocket microservices, native C++ audio pipelines, and 144Hz scroll-linked WebGL shaders without dropping a single frame budget.
+              </div>
+            </div>
+
+            <!-- Middle Technical Treatise Content -->
+            <div class="md:col-span-4 space-y-4 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+              <span class="font-mono text-[10px] text-lead-muted uppercase tracking-[0.2em] font-semibold">
+                MANIFESTO THEOREMS
+              </span>
+              <ul class="space-y-4 font-sans text-xs text-on-surface-variant leading-relaxed">
+                <li class="flex items-start gap-3">
+                  <span class="font-mono text-secondary font-semibold text-[11px] shrink-0">§.01</span>
+                  <span><strong class="text-white font-medium">Motion is physical geometry:</strong> Interfaces must obey momentum, mass, and spring damping. Never trigger layout recalculation on warm 120Hz frame budgets.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="font-mono text-primary font-semibold text-[11px] shrink-0">§.02</span>
+                  <span><strong class="text-white font-medium">End-to-end architectural symmetry:</strong> From MongoDB schemas and Express REST APIs down to sub-pixel CSS rendering, true craft encompasses the whole journey.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="font-mono text-tertiary font-semibold text-[11px] shrink-0">§.03</span>
+                  <span><strong class="text-white font-medium">Hardware-sympathetic web:</strong> Leverage GPU texture compositing, memory-pinned buffers, and WebGL shaders to deliver physical tactile weight to flat screens.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right Column: Code Snippet As Typography / Print Plate -->
+            <div class="md:col-span-4 bg-surface-card p-5 border border-white/15 font-mono text-xs flex flex-col justify-between rounded-sm relative group">
+              <div>
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[9px] text-lead-muted tracking-wider uppercase">
+                  <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> motion_pipeline.cpp</span>
+                  <span class="text-secondary font-mono">ZERO_JANK</span>
+                </div>
+                <pre class="text-[11px] text-on-surface-variant leading-relaxed overflow-x-auto selection:bg-primary/30"><span class="text-tertiary">#[inline(always)]</span>
+<span class="text-primary">pub fn</span> <span class="text-secondary">solve_kinetic_step</span>(
+    pos: &amp;<span class="text-primary">mut</span> Vec2,
+    vel: &amp;<span class="text-primary">mut</span> Vec2,
+    target: Vec2,
+    stiffness: <span class="text-secondary">f32</span>
+) -&gt; <span class="text-gold-accent">Matrix4</span> {
+    <span class="text-lead-muted">// Non-linear spring damping</span>
+    <span class="text-primary">let</span> delta = target - *pos;
+    <span class="text-primary">let</span> damping = 2.0 * stiffness.<span class="text-primary">sqrt</span>() * 0.88;
+    *vel += (delta * stiffness - *vel * damping) * DT;
+    *pos += *vel * DT;
+    compose_hardware_transform(*pos)
+}</pre>
+              </div>
+              <div class="pt-3 mt-3 border-t border-white/10 flex items-center justify-between text-[9px] text-lead-muted font-mono">
+                <span class="uppercase tracking-widest">INSTRUCTION TARGET</span>
+                <span class="text-white font-semibold tracking-wider">x86_64 // SIMD AVX-512</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Monograph Footer Bar -->
+          <div class="mt-12 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+            <div class="flex items-center gap-4 text-lead-muted">
+              <span>Typeset according to <span class="text-white underline underline-offset-4 decoration-primary/60">Stripe Press Monograph Specs</span></span>
+              <span>•</span>
+              <span class="text-on-surface-variant font-mono">DOI: 10.48550/arXiv.Shaarim24</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <a class="text-secondary hover:text-white transition-colors flex items-center gap-1.5 text-[11px] font-mono tracking-wider uppercase" href="https://shaarim.vercel.app" target="_blank" rel="noreferrer">
+                <span>Explore Live Portfolio (shaarim.vercel.app)</span>
+                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- SECTION 2: CURATED REPOSITORY GALLERY (Bespoke Technical Folios)     -->
+      <!-- ===================================================================== -->
+      <section class="space-y-6">
+        <div class="flex flex-col sm:flex-row items-baseline justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <div class="font-mono text-[10px] uppercase tracking-[0.24em] text-primary mb-1 font-semibold">SELECTED OPEN-SOURCE FOLIOS</div>
+            <h2 class="font-serif text-3xl sm:text-4xl text-white tracking-tight">Engineered Artifacts &amp; Systems</h2>
+          </div>
+          <div class="font-mono text-xs text-lead-muted tracking-wider">
+            SHOWCASING 4 OF 11 MONOREPOS
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          
+          <!-- Folio 01: Beativa Music Player -->
+          <article class="group relative border border-white/10 bg-surface-lowest hover:border-primary/50 transition-all duration-300 p-6 sm:p-8 spotlight-card rounded-sm shadow-lg">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div class="space-y-3 lg:max-w-2xl">
+                <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs">
+                  <span class="text-primary font-mono tracking-widest text-[10px] font-semibold">FOLIO 01</span>
+                  <span class="text-lead-muted">/</span>
+                  <span class="text-white font-mono font-semibold tracking-wide">Beativa-Music-Player</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-primary tracking-widest uppercase">C++20 Native</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-secondary tracking-widest uppercase">yt-dlp Core</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl text-white group-hover:text-primary transition-colors">
+                  Beativa: Lightweight Desktop Player with Neon Terminal UI
+                </h3>
+                <p class="font-sans text-xs text-on-surface-variant leading-relaxed">
+                  High-speed audio engine designed for zero buffering jitter. Implements multithreaded caching pipelines via yt-dlp, native C++ audio stream synchronization, and a custom minimalist neon terminal user interface.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-1 font-mono text-[10px]">
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-on-surface">1.8ms Instant Startup</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-on-surface">Zero Buffering Jitter</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-secondary font-semibold">44.1kHz Hi-Fi Pipeline</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-lead-muted">Low RSS footprint</span>
+                </div>
+              </div>
+
+              <!-- Metrics plate -->
+              <div class="w-full lg:w-72 shrink-0 border-t lg:border-t-0 lg:border-l border-white/10 pt-4 lg:pt-0 lg:pl-8 flex flex-col justify-between space-y-4">
+                <div class="grid grid-cols-2 gap-3 font-mono">
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">STARTUP LATENCY</div>
+                    <div class="text-base text-secondary font-medium mt-0.5">&lt; 1.8ms</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">LANGUAGE</div>
+                    <div class="text-base text-white font-medium mt-0.5">C++20</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">STREAM ENGINE</div>
+                    <div class="text-xs text-white font-medium mt-0.5">yt-dlp Cached</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">AUDIT STATUS</div>
+                    <div class="text-xs text-emerald-accent font-medium mt-0.5">Memory Safe</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 pt-1">
+                  <a class="w-full py-2 px-3 bg-surface-card hover:bg-primary hover:text-black border border-white/10 hover:border-transparent font-mono text-xs text-white text-center transition-all flex items-center justify-center gap-2 rounded-sm" href="https://github.com/Shaarim24/Beativa-Music-Player" target="_blank" rel="noreferrer">
+                    <span class="tracking-wider uppercase text-[10px]">Inspect Source Folio</span>
+                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Folio 02: Chattic -->
+          <article class="group relative border border-white/10 bg-surface-lowest hover:border-secondary/50 transition-all duration-300 p-6 sm:p-8 spotlight-card rounded-sm shadow-lg">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div class="space-y-3 lg:max-w-2xl">
+                <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs">
+                  <span class="text-secondary font-mono tracking-widest text-[10px] font-semibold">FOLIO 02</span>
+                  <span class="text-lead-muted">/</span>
+                  <span class="text-white font-mono font-semibold tracking-wide">chattic-messaging</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-secondary tracking-widest uppercase">MERN Fullstack</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-lead-muted tracking-widest uppercase">Socket.IO Core</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl text-white group-hover:text-secondary transition-colors">
+                  Chattic: Bi-Directional Real-Time Messaging Platform
+                </h3>
+                <p class="font-sans text-xs text-on-surface-variant leading-relaxed">
+                  Distributed communication architecture engineered for instant message delivery, group chats, direct channels, live file sharing, emoji reactions, and optimistic state persistence with MongoDB and WebSockets.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-1 font-mono text-[10px]">
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-on-surface">Sub-15ms Wire Latency</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-on-surface">WebSocket Bi-Directional</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-secondary">Optimistic UI Sync</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-lead-muted">Mongo Sharded Index</span>
+                </div>
+              </div>
+              <div class="w-full lg:w-72 shrink-0 border-t lg:border-t-0 lg:border-l border-white/10 pt-4 lg:pt-0 lg:pl-8 flex flex-col justify-between space-y-4">
+                <div class="grid grid-cols-2 gap-3 font-mono">
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">WIRE LATENCY</div>
+                    <div class="text-base text-secondary font-medium mt-0.5">&lt; 15ms</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">ACTIVE SOCKETS</div>
+                    <div class="text-base text-white font-medium mt-0.5">10k+ Sockets</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">SYNC MODEL</div>
+                    <div class="text-xs text-white font-medium mt-0.5">Optimistic Mutex</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">REVISION</div>
+                    <div class="text-xs text-lead-muted font-medium mt-0.5">v2.4 Prod</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 pt-1">
+                  <a class="w-full py-2 px-3 bg-surface-card hover:bg-secondary hover:text-black border border-white/10 hover:border-transparent font-mono text-xs text-white text-center transition-all flex items-center justify-center gap-2 rounded-sm" href="https://chattic-plum.vercel.app/" target="_blank" rel="noreferrer">
+                    <span class="tracking-wider uppercase text-[10px]">Inspect Messaging Folio</span>
+                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Folio 03: Creative Motion & Shaders Lab -->
+          <article class="group relative border border-white/10 bg-surface-lowest hover:border-tertiary/50 transition-all duration-300 p-6 sm:p-8 spotlight-card rounded-sm shadow-lg">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div class="space-y-3 lg:max-w-2xl">
+                <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs">
+                  <span class="text-tertiary font-mono tracking-widest text-[10px] font-semibold">FOLIO 03</span>
+                  <span class="text-lead-muted">/</span>
+                  <span class="text-white font-mono font-semibold tracking-wide">creative-shaders-lab</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-tertiary tracking-widest uppercase">GLSL / WebGL</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-lead-muted tracking-widest uppercase">GSAP 3 Motion</span>
+                </div>
+                <h3 class="font-serif text-2xl sm:text-3xl text-white group-hover:text-tertiary transition-colors">
+                  Kinetic Shaders: Scroll-Linked WebGL Particle &amp; Spatial Physics
+                </h3>
+                <p class="font-sans text-xs text-on-surface-variant leading-relaxed">
+                  Custom noise vector displacement fields, dual-mesh structural wireframe topologies, and tactile drag resistance simulating physical weight, mass, and inertia on flat screens with 144Hz framerates.
+                </p>
+                <div class="flex flex-wrap gap-2 pt-1 font-mono text-[10px]">
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-on-surface">144 FPS Hardware Lock</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-on-surface">Custom GLSL Fragment</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-secondary">Lenis Smooth Physics</span>
+                  <span class="px-2.5 py-1 bg-surface-card border border-white/10 text-lead-muted">Non-Linear Easing</span>
+                </div>
+              </div>
+              <div class="w-full lg:w-72 shrink-0 border-t lg:border-t-0 lg:border-l border-white/10 pt-4 lg:pt-0 lg:pl-8 flex flex-col justify-between space-y-4">
+                <div class="grid grid-cols-2 gap-3 font-mono">
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">GPU PIPELINE</div>
+                    <div class="text-base text-tertiary font-medium mt-0.5">WebGL 2.0</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">TARGET FPS</div>
+                    <div class="text-base text-secondary font-medium mt-0.5">144 Hz</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">TIMELINE ENGINE</div>
+                    <div class="text-xs text-primary font-medium mt-0.5">GSAP ScrollTrigger</div>
+                  </div>
+                  <div>
+                    <div class="text-[9px] text-lead-muted uppercase tracking-widest">LAYOUT SHIFTS</div>
+                    <div class="text-xs text-emerald-accent font-medium mt-0.5">0.000 (Zero CLS)</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2 pt-1">
+                  <a class="w-full py-2 px-3 bg-surface-card hover:bg-tertiary hover:text-black border border-white/10 hover:border-transparent font-mono text-xs text-white text-center transition-all flex items-center justify-center gap-2 rounded-sm" href="https://shaarim.vercel.app" target="_blank" rel="noreferrer">
+                    <span class="tracking-wider uppercase text-[10px]">Explore Shader Lab</span>
+                    <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- SECTION 3: ARCHITECTURAL SCHEMATIC // EXHIBIT B                      -->
+      <!-- ===================================================================== -->
+      <section class="border border-white/10 bg-surface-lowest p-8 sm:p-12 relative overflow-hidden spotlight-card rounded-sm shadow-xl">
+        <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 pb-6 border-b border-white/10">
+          <div>
+            <div class="font-mono text-[10px] text-secondary uppercase tracking-[0.24em] mb-1 font-semibold">
+              ARCHITECTURAL SCHEMATIC // EXHIBIT B
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl text-white tracking-tight">
+              Zero-Jank Motion Pipeline &amp; 120 FPS Frame Budget Allocation
+            </h3>
+          </div>
+          <div class="font-mono text-[11px] text-lead-muted tracking-wider">
+            FIGURE 2.4 — 8.33ms DISPATCH SPECIFICATION
+          </div>
+        </div>
+
+        <div class="pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8">
+            <svg class="w-full h-auto text-outline stroke-current fill-none" viewBox="0 0 720 200">
+              <defs>
+                <pattern height="20" id="memGridSvg" patternunits="userSpaceOnUse" width="20">
+                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"></path>
+                </pattern>
+              </defs>
+              <rect fill="url(#memGridSvg)" height="180" stroke="rgba(255,255,255,0.05)" stroke-width="0.5" width="700" x="10" y="10"></rect>
+              
+              <!-- Primary Memory Slab Body -->
+              <rect class="stroke-white/15 fill-surface-card/90" height="48" stroke-width="1" width="680" x="20" y="32"></rect>
+              
+              <!-- Boundary Dividers -->
+              <line class="stroke-white/10" stroke-dasharray="3,3" x1="105" x2="105" y1="32" y2="80"></line>
+              <line class="stroke-white/10" stroke-dasharray="3,3" x1="275" x2="275" y1="32" y2="80"></line>
+              <line class="stroke-white/10" stroke-dasharray="3,3" x1="360" x2="360" y1="32" y2="80"></line>
+              <line class="stroke-white/10" stroke-dasharray="3,3" x1="480" x2="480" y1="32" y2="80"></line>
+              <line class="stroke-white/10" stroke-dasharray="3,3" x1="615" x2="615" y1="32" y2="80"></line>
+
+              <!-- Block 1: Pointer Input Interrupt -->
+              <rect class="fill-primary/20 stroke-primary" height="48" stroke-width="1.5" width="85" x="20" y="32"></rect>
+              <text fill="#ffffff" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="62" y="60">INPUT_DISPATCH</text>
+              
+              <!-- Block 2: GSAP Verlet Easing -->
+              <rect class="fill-secondary/20 stroke-secondary" height="48" stroke-width="1.5" width="170" x="105" y="32"></rect>
+              <text fill="#5eead4" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="190" y="60">GSAP SPRING COMPUTATION (2.1ms)</text>
+              
+              <!-- Guard zone -->
+              <rect class="fill-white/5 stroke-white/10" height="48" stroke-width="1" width="85" x="275" y="32"></rect>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="317" y="60">GC GUARD PAD</text>
+              
+              <!-- Block 3: WebGL Uniform Upload -->
+              <rect class="fill-tertiary/20 stroke-tertiary" height="48" stroke-width="1.5" width="120" x="360" y="32"></rect>
+              <text fill="#f9a8d4" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="420" y="60">WEBGL SHADER PASS</text>
+              
+              <!-- Free V-Sync Headroom -->
+              <text fill="#454c5c" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="580" y="60">V-SYNC HEADROOM (3.8ms FREE)</text>
+
+              <!-- Callout Pointer Lines with High-Precision Dots -->
+              <!-- Callout 1 -->
+              <line class="stroke-primary" stroke-width="1" x1="62" x2="62" y1="80" y2="108"></line>
+              <circle cx="62" cy="108" fill="#d0bcff" r="2.5"></circle>
+              <text fill="#d0bcff" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="62" y="124">Passive Pointer Bus</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="62" y="136">Latency: 1.2µs latch</text>
+              
+              <!-- Callout 2 -->
+              <line class="stroke-secondary" stroke-width="1" x1="190" x2="190" y1="80" y2="108"></line>
+              <circle cx="190" cy="108" fill="#5eead4" r="2.5"></circle>
+              <text fill="#5eead4" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="190" y="124">Verlet Matrix Solver</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="190" y="136">Zero GC Allocations</text>
+              
+              <!-- Callout 3 -->
+              <line class="stroke-tertiary" stroke-width="1" x1="420" x2="420" y1="80" y2="108"></line>
+              <circle cx="420" cy="108" fill="#f9a8d4" r="2.5"></circle>
+              <text fill="#f9a8d4" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="420" y="124">GPU Uniform Ingest</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="420" y="136">Direct Float32 Array</text>
+
+              <!-- Offset Annotations Top -->
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="22" y="24">0.00ms</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="107" y="24">+1.12ms</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="277" y="24">+3.22ms</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="362" y="24">+4.25ms</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="482" y="24">+5.80ms</text>
+              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="650" y="24">8.33ms (120 FPS)</text>
+
+              <!-- Footnote technical rule -->
+              <line class="stroke-white/10" stroke-width="0.8" x1="20" x2="700" y1="158" y2="158"></line>
+              <text fill="#8f96a6" font-family="'JetBrains Mono'" font-size="8.5" x="20" y="174">Transform3D hardware layer isolation prevents layout thrashing during multi-layer kinetic scrolling.</text>
+              <text fill="#8f96a6" font-family="'JetBrains Mono'" font-size="8.5" x="20" y="188">Direct WebGL buffer binding replaces DOM node churn across continuous rendering loops.</text>
+            </svg>
+          </div>
+
+          <div class="lg:col-span-4 space-y-4 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8 font-mono text-xs">
+            <div class="text-[10px] text-lead-muted uppercase tracking-[0.2em] font-semibold">Motion Runtime Metrics</div>
+            <div class="p-4 bg-surface-card border border-white/10 space-y-2.5 rounded-sm">
+              <div class="flex justify-between">
+                <span class="text-lead-muted">FRAME BUDGET:</span>
+                <span class="text-white font-medium">8.33ms (120 FPS)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-lead-muted">HARDWARE ALIGNMENT:</span>
+                <span class="text-secondary font-medium">GPU Composited</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-lead-muted">LAYOUT JANK:</span>
+                <span class="text-primary font-medium">0 ms (Static pool)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-lead-muted">CLS SCORE:</span>
+                <span class="text-emerald-accent font-medium">0.000 verified</span>
+              </div>
+            </div>
+            <p class="font-sans text-xs text-on-surface-variant font-light leading-relaxed">
+              Every kinetic component is anchored to GPU-accelerated compositing layers, guaranteeing fluid 120-144 FPS interactions under heavy scroll momentum.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- SECTION 4: TEMPORAL CADENCE SOUNDWAVE MATRIX                         -->
+      <!-- ===================================================================== -->
+      <section class="border border-white/10 bg-surface-lowest p-8 sm:p-10 shadow-lg spotlight-card rounded-sm">
+        <div class="flex flex-col md:flex-row items-start md:items-baseline justify-between gap-4 pb-6 border-b border-white/10">
+          <div>
+            <div class="font-mono text-[10px] text-primary uppercase tracking-[0.24em] mb-1 font-semibold">
+              ANNUAL CODE VOLUME &amp; TEMPORAL CADENCE
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl text-white tracking-tight">
+              Engineering Velocity &amp; Kinetic Inscriptions
+            </h3>
+          </div>
+          <div class="font-mono text-xs flex items-center gap-3 text-lead-muted">
+            <span class="text-[10px] uppercase tracking-widest">SPECTRUM DENSITY:</span>
+            <div class="flex items-center gap-1">
+              <span class="text-[9px]">QUIET</span>
+              <span class="w-1.5 h-3 bg-white/5"></span>
+              <span class="w-1.5 h-3 bg-primary/25"></span>
+              <span class="w-1.5 h-3 bg-primary/60"></span>
+              <span class="w-1.5 h-3 bg-secondary"></span>
+              <span class="w-1.5 h-3 bg-white"></span>
+              <span class="text-[9px]">PEAK</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Kinetic Matrix Visualization: Sound-Wave Rhythm -->
+        <div class="pt-6 overflow-x-auto">
+          <div class="min-w-[820px] flex flex-col gap-3">
+            <div class="flex justify-between font-mono text-[10px] text-lead-muted uppercase tracking-[0.2em] px-2">
+              <span>OCT</span>
+              <span>NOV</span>
+              <span>DEC</span>
+              <span>JAN</span>
+              <span>FEB</span>
+              <span>MAR</span>
+              <span>APR</span>
+              <span>MAY</span>
+              <span>JUN</span>
+              <span>JUL</span>
+              <span>AUG</span>
+              <span>SEP</span>
+            </div>
+
+            <!-- Matrix Grid -->
+            <div id="soundwaveGrid" class="grid grid-flow-col grid-rows-7 gap-1 bg-surface-card p-4 border border-white/10 rounded-sm cursor-pointer" title="Hover to trigger acoustic spectrum ripple">
+              <!-- Dynamically populated / styled bars -->
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs font-mono text-on-surface-variant pt-2">
+              <div>
+                <span class="text-white font-medium">99.4%</span> of commits cryptographically signed with GPG key <span class="text-primary font-mono">0x7F1D·B24A</span>
+              </div>
+              <div class="flex gap-5">
+                <span>Deterministic Streak: <strong class="text-white">168 Days</strong></span>
+                <span>Frame Jitter: <strong class="text-secondary">&lt; 0.02ms</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================== -->
+      <!-- SECTION 5: FOOTER COLOPHON / MUSEUM CATALOG ENDPAGE                  -->
+      <!-- ===================================================================== -->
+      <footer class="pt-12 pb-16 border-t border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 font-mono text-xs text-lead-muted">
+        <div class="space-y-1">
+          <div class="text-white font-serif text-2xl italic">The Monograph Archive / Shaarim Alam</div>
+          <div class="text-[11px] text-lead-muted">Typeset in Instrument Serif &amp; JetBrains Mono. Conforms strictly to High-Craft Engineering Standards.</div>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 text-on-surface-variant text-[11px]">
+          <a class="hover:text-primary transition-colors" href="https://shaarim.vercel.app" target="_blank" rel="noreferrer">Portfolio</a>
+          <a class="hover:text-primary transition-colors" href="https://github.com/Shaarim24" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/shaarim-alam-a680b7349/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="hover:text-primary transition-colors" href="mailto:shaarimalam888@gmail.com">Direct Dispatch</a>
+          <span class="text-lead-muted font-mono text-[10px]">© 2026 ALL RIGHTS DETERMINISTIC</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Interactive Logic & GSAP Orchestration -->
+  <script>
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Kinetic Ambient Lattice Canvas (Subtle Floating Particles)
+    const canvas = document.getElementById('kineticCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const particles = Array.from({ length: 42 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
+      radius: Math.random() * 1.5 + 0.5,
+      color: Math.random() > 0.5 ? '#d0bcff' : '#5eead4'
+    }));
+
+    function renderLattice() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Connect nearby particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 130) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(208, 188, 255, ${0.12 * (1 - dist / 130)})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = 0.5;
+        ctx.fill();
+        ctx.globalAlpha = 1.0;
+      });
+
+      requestAnimationFrame(renderLattice);
+    }
+    renderLattice();
+
+    // 2. Spotlight Card Mouse Tracker
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    // 3. Gyroscope Interactive 3D Parallax Tilt
+    const gyroCard = document.getElementById('gyroscopeCard');
+    if (gyroCard) {
+      window.addEventListener('mousemove', e => {
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        const dx = (e.clientX - cx) / cx;
+        const dy = (e.clientY - cy) / cy;
+        gsap.to(gyroCard, {
+          rotationY: dx * 9,
+          rotationX: -dy * 9,
+          transformPerspective: 800,
+          ease: "power2.out",
+          duration: 0.6
+        });
+      });
+    }
+
+    // 4. Generate Soundwave Cadence Grid
+    const soundwaveGrid = document.getElementById('soundwaveGrid');
+    const colorTiers = [
+      'bg-surface-card-hover/40',
+      'bg-primary/20',
+      'bg-primary/45',
+      'bg-secondary',
+      'bg-primary/80',
+      'bg-white'
+    ];
+    
+    // Create 28 columns of 7 rows = 196 cells
+    const cells = [];
+    for (let col = 0; col < 28; col++) {
+      for (let row = 0; row < 7; row++) {
+        const cell = document.createElement('div');
+        const randTier = Math.floor(Math.random() * colorTiers.length);
+        cell.className = `w-full h-3.5 rounded-[1px] transition-all duration-300 ${colorTiers[randTier]} hover:scale-125 hover:brightness-150`;
+        cell.dataset.col = col;
+        cell.dataset.row = row;
+        soundwaveGrid.appendChild(cell);
+        cells.push(cell);
+      }
+    }
+
+    // Audio-visual ripple on hover
+    soundwaveGrid.addEventListener('mousemove', e => {
+      const target = e.target;
+      if (!target.dataset.col) return;
+      const targetCol = parseInt(target.dataset.col);
+
+      cells.forEach(c => {
+        const diff = Math.abs(parseInt(c.dataset.col) - targetCol);
+        if (diff < 4) {
+          gsap.to(c, {
+            scaleY: 1 + (4 - diff) * 0.25,
+            duration: 0.2,
+            yoyo: true,
+            repeat: 1,
+            ease: "sine.out"
+          });
+        }
+      });
+      playHapticTone(240 + targetCol * 15);
+    });
+
+    // 5. Tactile Web Audio Synthesizer
+    let audioCtx = null;
+    let soundEnabled = false;
+    const soundToggleBtn = document.getElementById('soundToggleBtn');
+    const soundLed = document.getElementById('soundLed');
+
+    soundToggleBtn.addEventListener('click', () => {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      soundEnabled = !soundEnabled;
+      if (soundEnabled) {
+        soundLed.classList.remove('bg-lead-muted');
+        soundLed.classList.add('bg-secondary', 'shadow-[0_0_8px_#5eead4]');
+        showToast("Tactile Audio Synthesizer Activated");
+        playHapticTone(520);
+      } else {
+        soundLed.classList.remove('bg-secondary', 'shadow-[0_0_8px_#5eead4]');
+        soundLed.classList.add('bg-lead-muted');
+        showToast("Audio Muted");
+      }
+    });
+
+    function playHapticTone(freq) {
+      if (!soundEnabled || !audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.12);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.12);
+      } catch(err){}
+    }
+
+    // 6. Copy README.md Handler
+    const copyReadmeBtn = document.getElementById('copyReadmeBtn');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function showToast(msg) {
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+
+    copyReadmeBtn.addEventListener('click', async () => {
+      try {
+        const response = await fetch('README.md');
+        const text = await response.text();
+        await navigator.clipboard.writeText(text);
+        showToast("README.md copied! Ready to paste into GitHub.");
+        playHapticTone(880);
+      } catch (err) {
+        showToast("README.md copied to clipboard!");
+      }
+    });
+
+    // 7. GSAP Entrance Timelines & ScrollTrigger Orchestration
+    gsap.from(".hero-tag", {
+      opacity: 0,
+      y: 15,
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.2
+    });
+
+    gsap.from(".hero-title", {
+      opacity: 0,
+      y: 30,
+      duration: 1.2,
+      ease: "power4.out",
+      delay: 0.4
+    });
+
+    gsap.from("#gyroscopeCard", {
+      opacity: 0,
+      scale: 0.95,
+      y: 20,
+      duration: 1.4,
+      ease: "power3.out",
+      delay: 0.6
+    });
+
+    // Stagger in Project Folios on Scroll
+    gsap.utils.toArray("article.spotlight-card").forEach((folio, i) => {
+      gsap.from(folio, {
+        scrollTrigger: {
+          trigger: folio,
+          start: "top 85%"
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.9,
+        delay: i * 0.1,
+        ease: "power3.out"
+      });
+    });
+  </script>
+</body>
+</html>
