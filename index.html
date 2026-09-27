@@ -19,23 +19,22 @@
       theme: {
         extend: {
           colors: {
-            "surface-lowest": "#05070a",
-            "surface-base": "#080b10",
-            "surface-card": "#0f131a",
-            "surface-card-hover": "#171c26",
-            "primary": "#d0bcff",
-            "primary-container": "#4f378b",
-            "secondary": "#5eead4",
-            "secondary-dark": "#0d9488",
-            "tertiary": "#f9a8d4",
-            "on-surface": "#e6e9f0",
-            "on-surface-variant": "#8f96a6",
-            "lead-muted": "#636c7e",
+            "surface-lowest": "#040508",
+            "surface-base": "#07090e",
+            "surface-card": "#0c0f16",
+            "surface-card-hover": "#131722",
+            "primary": "#e5c158",
+            "primary-container": "#856417",
+            "secondary": "#38bdf8",
+            "secondary-dark": "#0284c7",
+            "emerald-accent": "#34d399",
+            "on-surface": "#f1f5f9",
+            "on-surface-variant": "#94a3b8",
+            "lead-muted": "#64748b",
             "outline-dim": "rgba(255, 255, 255, 0.08)",
-            "outline-strong": "rgba(255, 255, 255, 0.16)",
-            "warm-sand": "#e8e5dc",
-            "gold-accent": "#fde047",
-            "emerald-accent": "#34d399"
+            "outline-strong": "rgba(255, 255, 255, 0.15)",
+            "warm-sand": "#f5f2eb",
+            "gold-accent": "#fde047"
           },
           fontFamily: {
             serif: ['"Instrument Serif"', 'Georgia', 'serif'],
@@ -55,20 +54,16 @@
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #06080c;
-      color: #e6e9f0;
+      background-color: #05070a;
+      color: #f1f5f9;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
     /* Ambient Blueprint Dot Grid */
     .bg-dot-pattern {
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
       background-size: 28px 28px;
-    }
-
-    .archival-hairline {
-      background: linear-gradient(90deg, rgba(208,188,255,0.4) 0%, rgba(94,234,212,0.2) 35%, rgba(255,255,255,0.04) 100%);
     }
 
     /* Custom subtle scrollbar */
@@ -76,14 +71,14 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #06080c;
+      background: #05070a;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1c2230;
+      background: #181c26;
       border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #2b3345;
+      background: #272e3d;
     }
 
     /* Interactive Spotlight on Cards */
@@ -98,7 +93,7 @@
       left: var(--mouse-x, -200px);
       width: 380px;
       height: 380px;
-      background: radial-gradient(circle, rgba(208, 188, 255, 0.12) 0%, rgba(94, 234, 212, 0.04) 40%, transparent 70%);
+      background: radial-gradient(circle, rgba(229, 193, 88, 0.10) 0%, rgba(56, 189, 248, 0.04) 40%, transparent 70%);
       transform: translate(-50%, -50%);
       pointer-events: none;
       transition: opacity 0.25s ease;
@@ -137,15 +132,9 @@
       left: 0;
       right: 0;
       height: 1px;
-      background: linear-gradient(90deg, transparent, #5eead4, transparent);
+      background: linear-gradient(90deg, transparent, #e5c158, transparent);
       animation: scanlineAnim 4s ease-in-out infinite;
-      opacity: 0.6;
-    }
-
-    /* Audio wave bounce */
-    @keyframes waveBounce {
-      0%, 100% { transform: scaleY(0.3); }
-      50% { transform: scaleY(1); }
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -158,8 +147,8 @@
   <!-- Floating Sticky Action Deck (Top Right) -->
   <aside class="fixed top-5 right-5 z-50 flex items-center gap-3">
     <!-- Sound Synth Toggle -->
-    <button id="soundToggleBtn" class="flex items-center gap-2 px-3 py-1.5 bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 hover:border-secondary/60 text-xs font-mono text-on-surface-variant hover:text-secondary transition-all shadow-xl rounded-sm group" title="Toggle tactile synthesized feedback">
-      <span class="w-2 h-2 rounded-full bg-lead-muted group-hover:bg-secondary transition-colors" id="soundLed"></span>
+    <button id="soundToggleBtn" class="flex items-center gap-2 px-3 py-1.5 bg-[#0a0d14]/90 backdrop-blur-md border border-white/10 hover:border-primary/60 text-xs font-mono text-on-surface-variant hover:text-primary transition-all shadow-xl rounded-sm group" title="Toggle tactile synthesized feedback">
+      <span class="w-2 h-2 rounded-full bg-lead-muted group-hover:bg-primary transition-colors" id="soundLed"></span>
       <span class="material-symbols-outlined text-sm">volume_up</span>
       <span class="hidden sm:inline text-[11px] uppercase tracking-wider">Tactile Audio</span>
     </button>
@@ -171,7 +160,7 @@
     </button>
 
     <!-- Jump to GitHub Profile -->
-    <a href="https://github.com/Shaarim24" target="_blank" rel="noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 bg-[#0b0e14]/90 backdrop-blur-md border border-white/10 hover:border-white/40 text-xs font-mono text-white transition-all shadow-xl rounded-sm">
+    <a href="https://github.com/Shaarim24" target="_blank" rel="noreferrer" class="flex items-center gap-1.5 px-3 py-1.5 bg-[#0a0d14]/90 backdrop-blur-md border border-white/10 hover:border-white/40 text-xs font-mono text-white transition-all shadow-xl rounded-sm">
       <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
       <span class="text-[11px] uppercase tracking-wider">GitHub</span>
     </a>
@@ -214,7 +203,7 @@
           
           <!-- Monograph Breadcrumb Header -->
           <div class="flex flex-wrap items-center gap-3 font-mono text-xs tracking-widest uppercase text-lead-muted mb-8 pt-3 border-b border-white/10 pb-4">
-            <span class="inline-block w-2 h-2 bg-primary animate-pulse"></span>
+            <span class="inline-block w-2 h-2 bg-primary"></span>
             <span class="text-white font-medium">README.md</span>
             <span class="text-lead-muted">/</span>
             <span class="text-on-surface-variant font-medium">Shaarim Alam</span>
@@ -261,8 +250,9 @@
                 <svg class="w-full h-auto text-outline stroke-current fill-none" viewBox="0 0 240 140">
                   <defs>
                     <radialGradient cx="50%" cy="50%" id="ringGlowDom" r="50%">
-                      <stop offset="0%" stop-color="#d0bcff" stop-opacity="0.3"></stop>
-                      <stop offset="100%" stop-color="#090b10" stop-opacity="0"></stop>
+                      <stop offset="0%" stop-color="#e5c158" stop-opacity="0.25"></stop>
+                      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.08"></stop>
+                      <stop offset="100%" stop-color="#040608" stop-opacity="0"></stop>
                     </radialGradient>
                   </defs>
                   
@@ -275,32 +265,32 @@
                   
                   <!-- Orbiting Rings -->
                   <circle cx="120" cy="70" r="50" stroke="rgba(255,255,255,0.12)" stroke-dasharray="3,3" stroke-width="0.75"></circle>
-                  <circle cx="120" cy="70" r="36" stroke="rgba(208, 188, 255, 0.4)" stroke-width="1"></circle>
-                  <circle cx="120" cy="70" r="18" stroke="rgba(94, 234, 212, 0.3)" stroke-width="0.75"></circle>
+                  <circle cx="120" cy="70" r="36" stroke="rgba(229, 193, 88, 0.4)" stroke-width="1"></circle>
+                  <circle cx="120" cy="70" r="18" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.75"></circle>
                   
                   <!-- Animated Clockwise Nodes -->
                   <g class="animate-spin-slow origin-[120px_70px]">
-                    <line stroke="rgba(208, 188, 255, 0.25)" stroke-width="0.8" x1="120" x2="90" y1="34" y2="88"></line>
-                    <line stroke="rgba(94, 234, 212, 0.25)" stroke-width="0.8" x1="120" x2="150" y1="34" y2="88"></line>
+                    <line stroke="rgba(229, 193, 88, 0.25)" stroke-width="0.8" x1="120" x2="90" y1="34" y2="88"></line>
+                    <line stroke="rgba(56, 189, 248, 0.25)" stroke-width="0.8" x1="120" x2="150" y1="34" y2="88"></line>
                     <line stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" x1="90" x2="150" y1="52" y2="88"></line>
-                    <line stroke="rgba(208, 188, 255, 0.2)" stroke-width="0.8" x1="90" x2="150" y1="88" y2="52"></line>
+                    <line stroke="rgba(229, 193, 88, 0.2)" stroke-width="0.8" x1="90" x2="150" y1="88" y2="52"></line>
 
-                    <circle cx="120" cy="34" fill="#d0bcff" r="3.5"></circle>
-                    <circle cx="120" cy="34" r="6" stroke="#d0bcff" stroke-opacity="0.4" stroke-width="0.5"></circle>
-                    <circle cx="150" cy="52" fill="#5eead4" r="3"></circle>
-                    <circle cx="150" cy="88" fill="#d0bcff" r="3.5"></circle>
-                    <circle cx="120" cy="106" fill="#9ba1b0" r="3"></circle>
-                    <circle cx="90" cy="88" fill="#f9a8d4" r="3.5"></circle>
-                    <circle cx="90" cy="52" fill="#5eead4" r="3"></circle>
+                    <circle cx="120" cy="34" fill="#e5c158" r="3.5"></circle>
+                    <circle cx="120" cy="34" r="6" stroke="#e5c158" stroke-opacity="0.4" stroke-width="0.5"></circle>
+                    <circle cx="150" cy="52" fill="#38bdf8" r="3"></circle>
+                    <circle cx="150" cy="88" fill="#e5c158" r="3.5"></circle>
+                    <circle cx="120" cy="106" fill="#94a3b8" r="3"></circle>
+                    <circle cx="90" cy="88" fill="#f5f2eb" r="3.5"></circle>
+                    <circle cx="90" cy="52" fill="#38bdf8" r="3"></circle>
                   </g>
 
                   <!-- Center Kinetic Anchor -->
-                  <circle cx="120" cy="70" r="5" fill="#11151c" stroke="#d0bcff" stroke-width="1.5"></circle>
-                  <circle cx="120" cy="70" r="2" fill="#5eead4"></circle>
+                  <circle cx="120" cy="70" r="5" fill="#0d1017" stroke="#e5c158" stroke-width="1.5"></circle>
+                  <circle cx="120" cy="70" r="2" fill="#38bdf8"></circle>
                   <text fill="#ffffff" font-family="'JetBrains Mono'" font-size="7" font-weight="600" letter-spacing="1.5" text-anchor="middle" x="120" y="73">CORE</text>
                   
-                  <text fill="#8f96a6" font-family="'JetBrains Mono'" font-size="6" text-anchor="middle" x="120" y="24">VERLET [120Hz]</text>
-                  <text fill="#5eead4" font-family="'JetBrains Mono'" font-size="6" text-anchor="start" x="195" y="72">Δ 0.12ms</text>
+                  <text fill="#717d91" font-family="'JetBrains Mono'" font-size="6" text-anchor="middle" x="120" y="24">VERLET [120Hz]</text>
+                  <text fill="#38bdf8" font-family="'JetBrains Mono'" font-size="6" text-anchor="start" x="195" y="72">Δ 0.12ms</text>
                 </svg>
 
                 <div class="mt-2.5 pt-2 border-t border-white/10 font-mono text-[10px] text-lead-muted flex justify-between items-center">
@@ -343,7 +333,7 @@
                   <span><strong class="text-white font-medium">End-to-end architectural symmetry:</strong> From MongoDB schemas and Express REST APIs down to sub-pixel CSS rendering, true craft encompasses the whole journey.</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <span class="font-mono text-tertiary font-semibold text-[11px] shrink-0">§.03</span>
+                  <span class="font-mono text-emerald-accent font-semibold text-[11px] shrink-0">§.03</span>
                   <span><strong class="text-white font-medium">Hardware-sympathetic web:</strong> Leverage GPU texture compositing, memory-pinned buffers, and WebGL shaders to deliver physical tactile weight to flat screens.</span>
                 </li>
               </ul>
@@ -356,7 +346,7 @@
                   <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> motion_pipeline.cpp</span>
                   <span class="text-secondary font-mono">ZERO_JANK</span>
                 </div>
-                <pre class="text-[11px] text-on-surface-variant leading-relaxed overflow-x-auto selection:bg-primary/30"><span class="text-tertiary">#[inline(always)]</span>
+                <pre class="text-[11px] text-on-surface-variant leading-relaxed overflow-x-auto selection:bg-primary/30"><span class="text-emerald-accent">#[inline(always)]</span>
 <span class="text-primary">pub fn</span> <span class="text-secondary">solve_kinetic_step</span>(
     pos: &amp;<span class="text-primary">mut</span> Vec2,
     vel: &amp;<span class="text-primary">mut</span> Vec2,
@@ -522,17 +512,17 @@
           </article>
 
           <!-- Folio 03: Creative Motion & Shaders Lab -->
-          <article class="group relative border border-white/10 bg-surface-lowest hover:border-tertiary/50 transition-all duration-300 p-6 sm:p-8 spotlight-card rounded-sm shadow-lg">
+          <article class="group relative border border-white/10 bg-surface-lowest hover:border-primary/50 transition-all duration-300 p-6 sm:p-8 spotlight-card rounded-sm shadow-lg">
             <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
               <div class="space-y-3 lg:max-w-2xl">
                 <div class="flex flex-wrap items-center gap-2.5 font-mono text-xs">
-                  <span class="text-tertiary font-mono tracking-widest text-[10px] font-semibold">FOLIO 03</span>
+                  <span class="text-emerald-accent font-mono tracking-widest text-[10px] font-semibold">FOLIO 03</span>
                   <span class="text-lead-muted">/</span>
                   <span class="text-white font-mono font-semibold tracking-wide">creative-shaders-lab</span>
-                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-tertiary tracking-widest uppercase">GLSL / WebGL</span>
+                  <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-emerald-accent tracking-widest uppercase">GLSL / WebGL</span>
                   <span class="px-2 py-0.5 bg-surface-card border border-white/10 text-[9px] text-lead-muted tracking-widest uppercase">GSAP 3 Motion</span>
                 </div>
-                <h3 class="font-serif text-2xl sm:text-3xl text-white group-hover:text-tertiary transition-colors">
+                <h3 class="font-serif text-2xl sm:text-3xl text-white group-hover:text-primary transition-colors">
                   Kinetic Shaders: Scroll-Linked WebGL Particle &amp; Spatial Physics
                 </h3>
                 <p class="font-sans text-xs text-on-surface-variant leading-relaxed">
@@ -549,7 +539,7 @@
                 <div class="grid grid-cols-2 gap-3 font-mono">
                   <div>
                     <div class="text-[9px] text-lead-muted uppercase tracking-widest">GPU PIPELINE</div>
-                    <div class="text-base text-tertiary font-medium mt-0.5">WebGL 2.0</div>
+                    <div class="text-base text-emerald-accent font-medium mt-0.5">WebGL 2.0</div>
                   </div>
                   <div>
                     <div class="text-[9px] text-lead-muted uppercase tracking-widest">TARGET FPS</div>
@@ -565,7 +555,7 @@
                   </div>
                 </div>
                 <div class="flex items-center gap-2 pt-1">
-                  <a class="w-full py-2 px-3 bg-surface-card hover:bg-tertiary hover:text-black border border-white/10 hover:border-transparent font-mono text-xs text-white text-center transition-all flex items-center justify-center gap-2 rounded-sm" href="https://shaarim.vercel.app" target="_blank" rel="noreferrer">
+                  <a class="w-full py-2 px-3 bg-surface-card hover:bg-emerald-accent hover:text-black border border-white/10 hover:border-transparent font-mono text-xs text-white text-center transition-all flex items-center justify-center gap-2 rounded-sm" href="https://shaarim.vercel.app" target="_blank" rel="noreferrer">
                     <span class="tracking-wider uppercase text-[10px]">Explore Shader Lab</span>
                     <span class="material-symbols-outlined text-xs">arrow_forward</span>
                   </a>
@@ -616,50 +606,50 @@
               <line class="stroke-white/10" stroke-dasharray="3,3" x1="615" x2="615" y1="32" y2="80"></line>
 
               <!-- Block 1: Pointer Input Interrupt -->
-              <rect class="fill-primary/20 stroke-primary" height="48" stroke-width="1.5" width="85" x="20" y="32"></rect>
+              <rect class="fill-secondary/20 stroke-secondary" height="48" stroke-width="1.5" width="85" x="20" y="32"></rect>
               <text fill="#ffffff" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="62" y="60">INPUT_DISPATCH</text>
               
               <!-- Block 2: GSAP Verlet Easing -->
-              <rect class="fill-secondary/20 stroke-secondary" height="48" stroke-width="1.5" width="170" x="105" y="32"></rect>
-              <text fill="#5eead4" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="190" y="60">GSAP SPRING COMPUTATION (2.1ms)</text>
+              <rect class="fill-primary/20 stroke-primary" height="48" stroke-width="1.5" width="170" x="105" y="32"></rect>
+              <text fill="#e5c158" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="190" y="60">GSAP SPRING COMPUTATION (2.1ms)</text>
               
               <!-- Guard zone -->
               <rect class="fill-white/5 stroke-white/10" height="48" stroke-width="1" width="85" x="275" y="32"></rect>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="317" y="60">GC GUARD PAD</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="317" y="60">GC GUARD PAD</text>
               
               <!-- Block 3: WebGL Uniform Upload -->
-              <rect class="fill-tertiary/20 stroke-tertiary" height="48" stroke-width="1.5" width="120" x="360" y="32"></rect>
-              <text fill="#f9a8d4" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="420" y="60">WEBGL SHADER PASS</text>
+              <rect class="fill-emerald-accent/20 stroke-emerald-accent" height="48" stroke-width="1.5" width="120" x="360" y="32"></rect>
+              <text fill="#34d399" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="420" y="60">WEBGL SHADER PASS</text>
               
               <!-- Free V-Sync Headroom -->
-              <text fill="#454c5c" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="580" y="60">V-SYNC HEADROOM (3.8ms FREE)</text>
+              <text fill="#525c6a" font-family="'JetBrains Mono'" font-size="8" text-anchor="middle" x="580" y="60">V-SYNC HEADROOM (3.8ms FREE)</text>
 
               <!-- Callout Pointer Lines with High-Precision Dots -->
               <!-- Callout 1 -->
-              <line class="stroke-primary" stroke-width="1" x1="62" x2="62" y1="80" y2="108"></line>
-              <circle cx="62" cy="108" fill="#d0bcff" r="2.5"></circle>
-              <text fill="#d0bcff" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="62" y="124">Passive Pointer Bus</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="62" y="136">Latency: 1.2µs latch</text>
+              <line class="stroke-secondary" stroke-width="1" x1="62" x2="62" y1="80" y2="108"></line>
+              <circle cx="62" cy="108" fill="#38bdf8" r="2.5"></circle>
+              <text fill="#38bdf8" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="62" y="124">Passive Pointer Bus</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="62" y="136">Latency: 1.2µs latch</text>
               
               <!-- Callout 2 -->
-              <line class="stroke-secondary" stroke-width="1" x1="190" x2="190" y1="80" y2="108"></line>
-              <circle cx="190" cy="108" fill="#5eead4" r="2.5"></circle>
-              <text fill="#5eead4" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="190" y="124">Verlet Matrix Solver</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="190" y="136">Zero GC Allocations</text>
+              <line class="stroke-primary" stroke-width="1" x1="190" x2="190" y1="80" y2="108"></line>
+              <circle cx="190" cy="108" fill="#e5c158" r="2.5"></circle>
+              <text fill="#e5c158" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="190" y="124">Verlet Matrix Solver</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="190" y="136">Zero GC Allocations</text>
               
               <!-- Callout 3 -->
-              <line class="stroke-tertiary" stroke-width="1" x1="420" x2="420" y1="80" y2="108"></line>
-              <circle cx="420" cy="108" fill="#f9a8d4" r="2.5"></circle>
-              <text fill="#f9a8d4" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="420" y="124">GPU Uniform Ingest</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="420" y="136">Direct Float32 Array</text>
+              <line class="stroke-emerald-accent" stroke-width="1" x1="420" x2="420" y1="80" y2="108"></line>
+              <circle cx="420" cy="108" fill="#34d399" r="2.5"></circle>
+              <text fill="#34d399" font-family="'JetBrains Mono'" font-size="9" text-anchor="middle" x="420" y="124">GPU Uniform Ingest</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="7" text-anchor="middle" x="420" y="136">Direct Float32 Array</text>
 
               <!-- Offset Annotations Top -->
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="22" y="24">0.00ms</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="107" y="24">+1.12ms</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="277" y="24">+3.22ms</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="362" y="24">+4.25ms</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="482" y="24">+5.80ms</text>
-              <text fill="#636c7e" font-family="'JetBrains Mono'" font-size="8" x="650" y="24">8.33ms (120 FPS)</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" x="22" y="24">0.00ms</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" x="107" y="24">+1.12ms</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" x="277" y="24">+3.22ms</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" x="362" y="24">+4.25ms</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" x="482" y="24">+5.80ms</text>
+              <text fill="#717d91" font-family="'JetBrains Mono'" font-size="8" x="650" y="24">8.33ms (120 FPS)</text>
 
               <!-- Footnote technical rule -->
               <line class="stroke-white/10" stroke-width="0.8" x1="20" x2="700" y1="158" y2="158"></line>
@@ -713,9 +703,9 @@
             <div class="flex items-center gap-1">
               <span class="text-[9px]">QUIET</span>
               <span class="w-1.5 h-3 bg-white/5"></span>
-              <span class="w-1.5 h-3 bg-primary/25"></span>
+              <span class="w-1.5 h-3 bg-secondary/30"></span>
               <span class="w-1.5 h-3 bg-primary/60"></span>
-              <span class="w-1.5 h-3 bg-secondary"></span>
+              <span class="w-1.5 h-3 bg-primary"></span>
               <span class="w-1.5 h-3 bg-white"></span>
               <span class="text-[9px]">PEAK</span>
             </div>
@@ -783,7 +773,7 @@
     // Register GSAP plugins
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Kinetic Ambient Lattice Canvas (Subtle Floating Particles)
+    // 1. Kinetic Ambient Lattice Canvas (Subtle Floating Particles in Gold & Sky)
     const canvas = document.getElementById('kineticCanvas');
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
@@ -794,13 +784,13 @@
       height = canvas.height = window.innerHeight;
     });
 
-    const particles = Array.from({ length: 42 }, () => ({
+    const particles = Array.from({ length: 36 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.35,
-      vy: (Math.random() - 0.5) * 0.35,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
       radius: Math.random() * 1.5 + 0.5,
-      color: Math.random() > 0.5 ? '#d0bcff' : '#5eead4'
+      color: Math.random() > 0.6 ? '#e5c158' : (Math.random() > 0.3 ? '#38bdf8' : '#ffffff')
     }));
 
     function renderLattice() {
@@ -812,12 +802,12 @@
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 130) {
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(208, 188, 255, ${0.12 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.6;
+            ctx.strokeStyle = `rgba(229, 193, 88, ${0.09 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
@@ -835,7 +825,7 @@
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
-        ctx.globalAlpha = 0.5;
+        ctx.globalAlpha = 0.45;
         ctx.fill();
         ctx.globalAlpha = 1.0;
       });
@@ -877,10 +867,10 @@
     const soundwaveGrid = document.getElementById('soundwaveGrid');
     const colorTiers = [
       'bg-surface-card-hover/40',
-      'bg-primary/20',
-      'bg-primary/45',
+      'bg-secondary/25',
+      'bg-primary/40',
       'bg-secondary',
-      'bg-primary/80',
+      'bg-primary/90',
       'bg-white'
     ];
     
@@ -932,11 +922,11 @@
       soundEnabled = !soundEnabled;
       if (soundEnabled) {
         soundLed.classList.remove('bg-lead-muted');
-        soundLed.classList.add('bg-secondary', 'shadow-[0_0_8px_#5eead4]');
+        soundLed.classList.add('bg-primary', 'shadow-[0_0_8px_#e5c158]');
         showToast("Tactile Audio Synthesizer Activated");
         playHapticTone(520);
       } else {
-        soundLed.classList.remove('bg-secondary', 'shadow-[0_0_8px_#5eead4]');
+        soundLed.classList.remove('bg-primary', 'shadow-[0_0_8px_#e5c158]');
         soundLed.classList.add('bg-lead-muted');
         showToast("Audio Muted");
       }

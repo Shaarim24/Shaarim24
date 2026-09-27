@@ -4,32 +4,27 @@
       .mono-tech { font-family: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace; }
       .serif-display { font-family: 'Instrument Serif', Georgia, serif; }
       .sans-body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
-      @keyframes pulseNeon {
-        0%, 100% { opacity: 0.8; }
-        50% { opacity: 1; filter: drop-shadow(0 0 4px #5eead4); }
-      }
-      .neon-glow { animation: pulseNeon 3s ease-in-out infinite; }
     </style>
   </defs>
 
-  <rect width="920" height="180" fill="#080b10" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" rx="4" />
+  <rect width="920" height="180" fill="#06080c" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="3" />
 
   <!-- Left Content Block -->
   <g transform="translate(32, 28)">
     <!-- Folio Tagline -->
     <g class="mono-tech" font-size="9.5">
-      <text x="0" y="0" fill="#d0bcff" font-weight="600" letter-spacing="2">FOLIO 01</text>
-      <text x="64" y="0" fill="#636c7e">/</text>
+      <text x="0" y="0" fill="#e5c158" font-weight="600" letter-spacing="2">FOLIO 01</text>
+      <text x="64" y="0" fill="#525c6a">/</text>
       <text x="76" y="0" fill="#ffffff" font-weight="600" letter-spacing="1">beativa-music-player</text>
       
-      <rect x="235" y="-10" width="60" height="16" fill="#11151c" stroke="rgba(208, 188, 255, 0.3)" rx="2" />
-      <text x="242" y="2" fill="#d0bcff" font-size="8">C++20</text>
+      <rect x="235" y="-10" width="60" height="16" fill="#0d1017" stroke="rgba(229, 193, 88, 0.3)" rx="2" />
+      <text x="242" y="2" fill="#e5c158" font-size="8">C++20</text>
 
-      <rect x="302" y="-10" width="70" height="16" fill="#11151c" stroke="rgba(94, 234, 212, 0.3)" rx="2" />
-      <text x="309" y="2" fill="#5eead4" font-size="8">yt-dlp core</text>
+      <rect x="302" y="-10" width="70" height="16" fill="#0d1017" stroke="rgba(56, 189, 248, 0.3)" rx="2" />
+      <text x="309" y="2" fill="#38bdf8" font-size="8">yt-dlp core</text>
 
-      <rect x="380" y="-10" width="75" height="16" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
-      <text x="387" y="2" fill="#8f96a6" font-size="8">TERMINAL UI</text>
+      <rect x="380" y="-10" width="75" height="16" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
+      <text x="387" y="2" fill="#717d91" font-size="8">TERMINAL UI</text>
     </g>
 
     <!-- Title -->
@@ -38,26 +33,26 @@
     </text>
 
     <!-- Summary -->
-    <text x="0" y="60" class="sans-body" fill="#8f96a6" font-size="11">
+    <text x="0" y="60" class="sans-body" fill="#94a3b8" font-size="11">
       Engineered for lightning-fast audio responsiveness and minimalist terminal visual styling.
     </text>
-    <text x="0" y="78" class="sans-body" fill="#8f96a6" font-size="11">
+    <text x="0" y="78" class="sans-body" fill="#94a3b8" font-size="11">
       Integrates yt-dlp multithreaded caching pipelines with native C++ DAC audio synchronization.
     </text>
 
     <!-- Micro Tags -->
     <g transform="translate(0, 104)" class="mono-tech" font-size="8.5">
-      <rect x="0" y="0" width="124" height="20" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
-      <text x="8" y="13" fill="#e6e9f0">1.8ms Instant Startup</text>
+      <rect x="0" y="0" width="124" height="20" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
+      <text x="8" y="13" fill="#e2e8f0">1.8ms Instant Startup</text>
 
-      <rect x="132" y="0" width="112" height="20" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
-      <text x="140" y="13" fill="#e6e9f0">Zero Buffering Jitter</text>
+      <rect x="132" y="0" width="112" height="20" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
+      <text x="140" y="13" fill="#e2e8f0">Zero Buffering Jitter</text>
 
-      <rect x="252" y="0" width="134" height="20" fill="#11151c" stroke="rgba(94, 234, 212, 0.3)" rx="2" />
-      <text x="260" y="13" fill="#5eead4">44.1kHz Hi-Fi Pipeline</text>
+      <rect x="252" y="0" width="134" height="20" fill="#0d1017" stroke="rgba(56, 189, 248, 0.3)" rx="2" />
+      <text x="260" y="13" fill="#38bdf8">44.1kHz Hi-Fi Pipeline</text>
 
-      <rect x="394" y="0" width="128" height="20" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
-      <text x="402" y="13" fill="#8f96a6">Multithreaded Cache</text>
+      <rect x="394" y="0" width="128" height="20" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
+      <text x="402" y="13" fill="#717d91">Multithreaded Cache</text>
     </g>
   </g>
 
@@ -67,28 +62,28 @@
   <g transform="translate(668, 28)" class="mono-tech">
     <!-- Row 1 -->
     <g>
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">AUDIO LATENCY</text>
-      <text x="0" y="18" fill="#5eead4" font-size="14" font-weight="600">&lt; 1.8ms</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">AUDIO LATENCY</text>
+      <text x="0" y="18" fill="#38bdf8" font-size="14" font-weight="600">&lt; 1.8ms</text>
     </g>
     <g transform="translate(120, 0)">
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">ARCHITECTURE</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">ARCHITECTURE</text>
       <text x="0" y="18" fill="#ffffff" font-size="14" font-weight="600">Native C++</text>
     </g>
 
     <!-- Row 2 -->
     <g transform="translate(0, 52)">
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">MEMORY FOOTPRINT</text>
-      <text x="0" y="16" fill="#d0bcff" font-size="11" font-weight="500">14.2 MB RSS</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">MEMORY FOOTPRINT</text>
+      <text x="0" y="16" fill="#e5c158" font-size="11" font-weight="500">14.2 MB RSS</text>
     </g>
     <g transform="translate(120, 52)">
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">DEPLOYMENT</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">DEPLOYMENT</text>
       <text x="0" y="16" fill="#10b981" font-size="11" font-weight="500">Cross-Platform</text>
     </g>
 
     <!-- Inspect Action Link -->
     <g transform="translate(0, 94)">
-      <rect x="0" y="0" width="216" height="26" fill="#11151c" stroke="rgba(208, 188, 255, 0.3)" rx="2" />
-      <text x="108" y="17" fill="#d0bcff" font-size="9" text-anchor="middle" font-weight="600" letter-spacing="1">
+      <rect x="0" y="0" width="216" height="26" fill="#0d1017" stroke="rgba(229, 193, 88, 0.3)" rx="2" />
+      <text x="108" y="17" fill="#e5c158" font-size="9" text-anchor="middle" font-weight="600" letter-spacing="1">
         INSPECT SOURCE FOLIO →
       </text>
     </g>

@@ -10,20 +10,20 @@
 <!-- Quick Telemetry Action Strip -->
 <p align="center">
   <a href="https://shaarim.vercel.app">
-    <img src="https://img.shields.io/badge/FOLIO-shaarim.vercel.app-11151c?style=flat-square&logo=vercel&logoColor=d0bcff&labelColor=080b10" alt="Portfolio" />
+    <img src="https://img.shields.io/badge/FOLIO-shaarim.vercel.app-0c0f16?style=flat-square&logo=vercel&logoColor=e5c158&labelColor=05070a" alt="Portfolio" />
   </a>
   &nbsp;
   <a href="mailto:shaarimalam888@gmail.com">
-    <img src="https://img.shields.io/badge/COMMISSION-Open%20For%20Work-11151c?style=flat-square&logo=gmail&logoColor=5eead4&labelColor=080b10" alt="Email" />
+    <img src="https://img.shields.io/badge/COMMISSION-Open%20For%20Work-0c0f16?style=flat-square&logo=gmail&logoColor=38bdf8&labelColor=05070a" alt="Email" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/shaarim-alam-a680b7349/">
-    <img src="https://img.shields.io/badge/NETWORK-LinkedIn-11151c?style=flat-square&logo=linkedin&logoColor=d0bcff&labelColor=080b10" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/NETWORK-LinkedIn-0c0f16?style=flat-square&logo=linkedin&logoColor=e5c158&labelColor=05070a" alt="LinkedIn" />
   </a>
   &nbsp;
-  <img src="https://img.shields.io/badge/FRAME_BUDGET-120_FPS_Locked-11151c?style=flat-square&logo=speedtest&logoColor=5eead4&labelColor=080b10" alt="120 FPS" />
+  <img src="https://img.shields.io/badge/FRAME_BUDGET-120_FPS_Locked-0c0f16?style=flat-square&logo=speedtest&logoColor=34d399&labelColor=05070a" alt="120 FPS" />
   &nbsp;
-  <img src="https://img.shields.io/badge/COORDINATES-Jamshedpur%2C%20IN-11151c?style=flat-square&labelColor=080b10" alt="Location" />
+  <img src="https://img.shields.io/badge/COORDINATES-Jamshedpur%2C%20IN-0c0f16?style=flat-square&labelColor=05070a" alt="Location" />
 </p>
 
 </div>
@@ -38,7 +38,7 @@
 
 #### `PROLOGUE // MOTIVATION`
 
-> *"Modern web applications did not fail due to network bandwidth; they decayed through careless layout thrashing, bloated runtime dependencies, and uninspired motion."*
+> *"Modern web applications did not fail due to network physics; they decayed through careless layout thrashing, bloated runtime dependencies, and uninspired motion."*
 
 We formulate a mechanical defense of tactile, zero-jank digital experiences: combining low-level systems execution (**C++**, **Lua**) with cutting-edge browser performance (**GSAP**, **WebGL Shaders**, and bi-directional **WebSocket** pipelines).
 

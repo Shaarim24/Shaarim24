@@ -6,13 +6,13 @@
     </style>
   </defs>
 
-  <rect width="920" height="170" fill="#080b10" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" rx="4" />
+  <rect width="920" height="170" fill="#06080c" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="3" />
 
   <g transform="translate(28, 24)" class="mono-tech">
-    <text x="0" y="0" fill="#5eead4" font-size="9.5" font-weight="600" letter-spacing="2.2">
+    <text x="0" y="0" fill="#e5c158" font-size="9.5" font-weight="600" letter-spacing="2.2">
       VERIFIED HARDWARE &amp; RUNTIME CAPABILITIES
     </text>
-    <text x="864" y="0" fill="#8f96a6" font-size="8.5" text-anchor="end" letter-spacing="1">
+    <text x="864" y="0" fill="#717d91" font-size="8.5" text-anchor="end" letter-spacing="1">
       FULL-STACK / LOW-LEVEL SYMPATHY
     </text>
   </g>
@@ -22,81 +22,81 @@
   <!-- 4 Columns of Capabilities -->
   <!-- Col 1: Systems & Core -->
   <g transform="translate(28, 54)" class="mono-tech">
-    <text x="0" y="0" fill="#d0bcff" font-size="8.5" letter-spacing="1.5">01 // CORE &amp; SYSTEMS</text>
+    <text x="0" y="0" fill="#e5c158" font-size="8.5" letter-spacing="1.5">01 // CORE &amp; SYSTEMS</text>
     <g transform="translate(0, 14)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#d0bcff" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#e5c158" />
       <text x="20" y="14" fill="#ffffff" font-size="9">C++20 Native Engine</text>
     </g>
     <g transform="translate(0, 42)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#5eead4" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#38bdf8" />
       <text x="20" y="14" fill="#ffffff" font-size="9">Lua 5.4 / JIT Automation</text>
     </g>
     <g transform="translate(0, 70)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#8f96a6" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#717d91" />
       <text x="20" y="14" fill="#ffffff" font-size="9">Linux &amp; POSIX Shell</text>
     </g>
   </g>
 
   <!-- Col 2: Frontend & Motion -->
   <g transform="translate(252, 54)" class="mono-tech">
-    <text x="0" y="0" fill="#5eead4" font-size="8.5" letter-spacing="1.5">02 // MOTION &amp; UI CRAFT</text>
+    <text x="0" y="0" fill="#38bdf8" font-size="8.5" letter-spacing="1.5">02 // MOTION &amp; UI CRAFT</text>
     <g transform="translate(0, 14)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(94, 234, 212, 0.3)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#5eead4" />
-      <text x="20" y="14" fill="#5eead4" font-size="9" font-weight="600">GSAP 3 ScrollTrigger</text>
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(56, 189, 248, 0.3)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#38bdf8" />
+      <text x="20" y="14" fill="#38bdf8" font-size="9" font-weight="600">GSAP 3 ScrollTrigger</text>
     </g>
     <g transform="translate(0, 42)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#f9a8d4" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#e5c158" />
       <text x="20" y="14" fill="#ffffff" font-size="9">Three.js / WebGL Shaders</text>
     </g>
     <g transform="translate(0, 70)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#e8e5dc" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#e2e8f0" />
       <text x="20" y="14" fill="#ffffff" font-size="9">Tailwind &amp; Vanilla CSS</text>
     </g>
   </g>
 
   <!-- Col 3: Web & Runtime -->
   <g transform="translate(476, 54)" class="mono-tech">
-    <text x="0" y="0" fill="#f9a8d4" font-size="8.5" letter-spacing="1.5">03 // REACT &amp; CLOUD</text>
+    <text x="0" y="0" fill="#e2e8f0" font-size="8.5" letter-spacing="1.5">03 // REACT &amp; CLOUD</text>
     <g transform="translate(0, 14)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#f9a8d4" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#e2e8f0" />
       <text x="20" y="14" fill="#ffffff" font-size="9">React (SPA / Modern)</text>
     </g>
     <g transform="translate(0, 42)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#5eead4" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#38bdf8" />
       <text x="20" y="14" fill="#ffffff" font-size="9">Node.js &amp; Express APIs</text>
     </g>
     <g transform="translate(0, 70)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#d0bcff" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#e5c158" />
       <text x="20" y="14" fill="#ffffff" font-size="9">MongoDB / Document Store</text>
     </g>
   </g>
 
   <!-- Col 4: Networking & Telecom -->
   <g transform="translate(700, 54)" class="mono-tech">
-    <text x="0" y="0" fill="#e8e5dc" font-size="8.5" letter-spacing="1.5">04 // REAL-TIME NETWORK</text>
+    <text x="0" y="0" fill="#34d399" font-size="8.5" letter-spacing="1.5">04 // REAL-TIME NETWORK</text>
     <g transform="translate(0, 14)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
       <circle cx="10" cy="11" r="2.5" fill="#10b981" />
       <text x="20" y="14" fill="#ffffff" font-size="9">Socket.IO &amp; WebSockets</text>
     </g>
     <g transform="translate(0, 42)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#d0bcff" />
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.08)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#38bdf8" />
       <text x="20" y="14" fill="#ffffff" font-size="9">RESTful Architecture</text>
     </g>
     <g transform="translate(0, 70)">
-      <rect x="0" y="0" width="190" height="22" fill="#11151c" stroke="rgba(94, 234, 212, 0.3)" rx="2" />
-      <circle cx="10" cy="11" r="2.5" fill="#5eead4" />
-      <text x="20" y="14" fill="#5eead4" font-size="9">Sub-15ms Wire Latency</text>
+      <rect x="0" y="0" width="190" height="22" fill="#0d1017" stroke="rgba(52, 211, 153, 0.3)" rx="2" />
+      <circle cx="10" cy="11" r="2.5" fill="#34d399" />
+      <text x="20" y="14" fill="#34d399" font-size="9">Sub-15ms Wire Latency</text>
     </g>
   </g>
 </svg>

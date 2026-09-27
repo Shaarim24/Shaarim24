@@ -7,24 +7,24 @@
     </style>
   </defs>
 
-  <rect width="920" height="180" fill="#080b10" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" rx="4" />
+  <rect width="920" height="180" fill="#06080c" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="3" />
 
   <!-- Left Content Block -->
   <g transform="translate(32, 28)">
     <!-- Folio Tagline -->
     <g class="mono-tech" font-size="9.5">
-      <text x="0" y="0" fill="#f9a8d4" font-weight="600" letter-spacing="2">FOLIO 03</text>
-      <text x="64" y="0" fill="#636c7e">/</text>
+      <text x="0" y="0" fill="#34d399" font-weight="600" letter-spacing="2">FOLIO 03</text>
+      <text x="64" y="0" fill="#525c6a">/</text>
       <text x="76" y="0" fill="#ffffff" font-weight="600" letter-spacing="1">creative-shaders-lab</text>
       
-      <rect x="236" y="-10" width="60" height="16" fill="#11151c" stroke="rgba(249, 168, 212, 0.3)" rx="2" />
-      <text x="243" y="2" fill="#f9a8d4" font-size="8">GLSL Shaders</text>
+      <rect x="236" y="-10" width="60" height="16" fill="#0d1017" stroke="rgba(52, 211, 153, 0.3)" rx="2" />
+      <text x="243" y="2" fill="#34d399" font-size="8">GLSL Shaders</text>
 
-      <rect x="302" y="-10" width="65" height="16" fill="#11151c" stroke="rgba(94, 234, 212, 0.3)" rx="2" />
-      <text x="309" y="2" fill="#5eead4" font-size="8">Three.js</text>
+      <rect x="302" y="-10" width="65" height="16" fill="#0d1017" stroke="rgba(56, 189, 248, 0.3)" rx="2" />
+      <text x="309" y="2" fill="#38bdf8" font-size="8">Three.js</text>
 
-      <rect x="372" y="-10" width="65" height="16" fill="#11151c" stroke="rgba(208, 188, 255, 0.3)" rx="2" />
-      <text x="379" y="2" fill="#d0bcff" font-size="8">GSAP 3</text>
+      <rect x="372" y="-10" width="65" height="16" fill="#0d1017" stroke="rgba(229, 193, 88, 0.3)" rx="2" />
+      <text x="379" y="2" fill="#e5c158" font-size="8">GSAP 3</text>
     </g>
 
     <!-- Title -->
@@ -33,26 +33,26 @@
     </text>
 
     <!-- Summary -->
-    <text x="0" y="60" class="sans-body" fill="#8f96a6" font-size="11">
+    <text x="0" y="60" class="sans-body" fill="#94a3b8" font-size="11">
       Custom noise vector displacement fields, dual-mesh structural wireframe topologies,
     </text>
-    <text x="0" y="78" class="sans-body" fill="#8f96a6" font-size="11">
+    <text x="0" y="78" class="sans-body" fill="#94a3b8" font-size="11">
       and tactile drag resistance simulating physical weight, mass, and inertia on flat screens.
     </text>
 
     <!-- Micro Tags -->
     <g transform="translate(0, 104)" class="mono-tech" font-size="8.5">
-      <rect x="0" y="0" width="134" height="20" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
-      <text x="8" y="13" fill="#e6e9f0">144 FPS Hardware Lock</text>
+      <rect x="0" y="0" width="134" height="20" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
+      <text x="8" y="13" fill="#e2e8f0">144 FPS Hardware Lock</text>
 
-      <rect x="142" y="0" width="130" height="20" fill="#11151c" stroke="rgba(249, 168, 212, 0.3)" rx="2" />
-      <text x="150" y="13" fill="#f9a8d4">Custom GLSL Fragment</text>
+      <rect x="142" y="0" width="130" height="20" fill="#0d1017" stroke="rgba(52, 211, 153, 0.3)" rx="2" />
+      <text x="150" y="13" fill="#34d399">Custom GLSL Fragment</text>
 
-      <rect x="280" y="0" width="124" height="20" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
-      <text x="288" y="13" fill="#e6e9f0">Lenis Smooth Physics</text>
+      <rect x="280" y="0" width="124" height="20" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" rx="2" />
+      <text x="288" y="13" fill="#e2e8f0">Lenis Smooth Physics</text>
 
-      <rect x="412" y="0" width="124" height="20" fill="#11151c" stroke="rgba(94, 234, 212, 0.3)" rx="2" />
-      <text x="420" y="13" fill="#5eead4">Non-Linear Easing</text>
+      <rect x="412" y="0" width="124" height="20" fill="#0d1017" stroke="rgba(229, 193, 88, 0.3)" rx="2" />
+      <text x="420" y="13" fill="#e5c158">Non-Linear Easing</text>
     </g>
   </g>
 
@@ -62,28 +62,28 @@
   <g transform="translate(668, 28)" class="mono-tech">
     <!-- Row 1 -->
     <g>
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">GPU COMPUTE</text>
-      <text x="0" y="18" fill="#f9a8d4" font-size="14" font-weight="600">WebGL 2.0</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">GPU COMPUTE</text>
+      <text x="0" y="18" fill="#34d399" font-size="14" font-weight="600">WebGL 2.0</text>
     </g>
     <g transform="translate(120, 0)">
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">TARGET FPS</text>
-      <text x="0" y="18" fill="#5eead4" font-size="14" font-weight="600">144 Hz</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">TARGET FPS</text>
+      <text x="0" y="18" fill="#ffffff" font-size="14" font-weight="600">144 Hz</text>
     </g>
 
     <!-- Row 2 -->
     <g transform="translate(0, 52)">
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">TIMELINE CONTROL</text>
-      <text x="0" y="16" fill="#d0bcff" font-size="11" font-weight="500">GSAP ScrollTrigger</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">TIMELINE CONTROL</text>
+      <text x="0" y="16" fill="#e5c158" font-size="11" font-weight="500">GSAP ScrollTrigger</text>
     </g>
     <g transform="translate(120, 52)">
-      <text x="0" y="0" fill="#636c7e" font-size="8" letter-spacing="1">AUDIT RATING</text>
+      <text x="0" y="0" fill="#717d91" font-size="8" letter-spacing="1">AUDIT RATING</text>
       <text x="0" y="16" fill="#10b981" font-size="11" font-weight="500">0 Layout Shifts</text>
     </g>
 
     <!-- Inspect Action Link -->
     <g transform="translate(0, 94)">
-      <rect x="0" y="0" width="216" height="26" fill="#11151c" stroke="rgba(249, 168, 212, 0.3)" rx="2" />
-      <text x="108" y="17" fill="#f9a8d4" font-size="9" text-anchor="middle" font-weight="600" letter-spacing="1">
+      <rect x="0" y="0" width="216" height="26" fill="#0d1017" stroke="rgba(52, 211, 153, 0.3)" rx="2" />
+      <text x="108" y="17" fill="#34d399" font-size="9" text-anchor="middle" font-weight="600" letter-spacing="1">
         EXPLORE SHADER LAB →
       </text>
     </g>

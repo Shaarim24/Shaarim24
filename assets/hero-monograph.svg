@@ -1,26 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" width="100%" height="100%">
   <defs>
-    <!-- Background Radial Gradients -->
-    <radialGradient id="heroBgGlow" cx="25%" cy="35%" r="65%">
-      <stop offset="0%" stop-color="#1e1838" stop-opacity="0.75" />
-      <stop offset="50%" stop-color="#0e121a" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#07090e" stop-opacity="1" />
+    <!-- Background Radial Gradients: Deep Neutral Obsidian -->
+    <radialGradient id="heroBgGlow" cx="25%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#141923" stop-opacity="0.85" />
+      <stop offset="45%" stop-color="#090c12" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#040608" stop-opacity="1" />
     </radialGradient>
     <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#d0bcff" stop-opacity="0.25" />
-      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#07090e" stop-opacity="0" />
+      <stop offset="0%" stop-color="#e5c158" stop-opacity="0.18" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#040608" stop-opacity="0" />
     </radialGradient>
-    <linearGradient id="violetCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#d0bcff" />
-      <stop offset="100%" stop-color="#5eead4" />
-    </linearGradient>
-    <linearGradient id="warmSandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e8e5dc" />
-      <stop offset="100%" stop-color="#ffffff" />
-    </linearGradient>
     <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="0.75" fill="rgba(255, 255, 255, 0.05)" />
+      <circle cx="2" cy="2" r="0.75" fill="rgba(255, 255, 255, 0.04)" />
     </pattern>
 
     <style>
@@ -34,17 +26,7 @@
       }
       @keyframes pulseGlow {
         0%, 100% { opacity: 0.35; transform: scale(1); }
-        50% { opacity: 0.65; transform: scale(1.08); }
-      }
-      @keyframes scanBeam {
-        0% { transform: translateY(0); opacity: 0; }
-        30% { opacity: 0.8; }
-        80% { opacity: 0.8; }
-        100% { transform: translateY(490px); opacity: 0; }
-      }
-      @keyframes textShimmer {
-        0%, 100% { opacity: 0.9; }
-        50% { opacity: 1; filter: drop-shadow(0 0 6px rgba(208, 188, 255, 0.4)); }
+        50% { opacity: 0.7; transform: scale(1.06); }
       }
       .orbit-cw {
         transform-origin: 730px 185px;
@@ -68,47 +50,47 @@
   </defs>
 
   <!-- Shell Canvas -->
-  <rect width="920" height="490" fill="url(#heroBgGlow)" rx="6" />
-  <rect width="920" height="490" fill="url(#dotGrid)" rx="6" />
+  <rect width="920" height="490" fill="url(#heroBgGlow)" rx="4" />
+  <rect width="920" height="490" fill="url(#dotGrid)" rx="4" />
   
   <!-- Outer Archival Border -->
-  <rect x="0.5" y="0.5" width="919" height="489" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" rx="6" />
+  <rect x="0.5" y="0.5" width="919" height="489" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="4" />
 
   <!-- Corner Spec Labels -->
   <!-- Top Left -->
   <g class="mono-tech">
-    <rect x="1" y="1" width="220" height="24" fill="#0b0e14" opacity="0.8" />
+    <rect x="1" y="1" width="220" height="24" fill="#080a0f" opacity="0.9" />
     <path d="M 221 1 L 221 25 L 1 25" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" fill="none" />
-    <text x="14" y="16" fill="#8f96a6" font-size="8.5" letter-spacing="1.8">SPEC // SHAARIM NO. 024</text>
+    <text x="14" y="16" fill="#717d91" font-size="8.5" letter-spacing="1.8">SPEC // SHAARIM NO. 024</text>
   </g>
   <!-- Top Right -->
   <g class="mono-tech">
-    <rect x="670" y="1" width="249" height="24" fill="#0b0e14" opacity="0.8" />
+    <rect x="670" y="1" width="249" height="24" fill="#080a0f" opacity="0.9" />
     <path d="M 670 1 L 670 25 L 919 25" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" fill="none" />
-    <text x="682" y="16" fill="#d0bcff" font-size="8.5" letter-spacing="1.8">ARCHIVAL FOLIO // VOL. 2026.1</text>
+    <text x="682" y="16" fill="#e5c158" font-size="8.5" letter-spacing="1.8">ARCHIVAL FOLIO // VOL. 2026.1</text>
   </g>
   <!-- Bottom Left -->
   <g class="mono-tech">
-    <rect x="1" y="465" width="240" height="24" fill="#0b0e14" opacity="0.8" />
+    <rect x="1" y="465" width="240" height="24" fill="#080a0f" opacity="0.9" />
     <path d="M 1 465 L 241 465 L 241 489" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" fill="none" />
-    <text x="14" y="480" fill="#8f96a6" font-size="8.5" letter-spacing="1.8">FRAME BUDGET: 8.33ms (120 FPS)</text>
+    <text x="14" y="480" fill="#717d91" font-size="8.5" letter-spacing="1.8">FRAME BUDGET: 8.33ms (120 FPS)</text>
   </g>
   <!-- Bottom Right -->
   <g class="mono-tech">
-    <rect x="660" y="465" width="259" height="24" fill="#0b0e14" opacity="0.8" />
+    <rect x="660" y="465" width="259" height="24" fill="#080a0f" opacity="0.9" />
     <path d="M 660 489 L 660 465 L 919 465" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" fill="none" />
-    <text x="674" y="480" fill="#5eead4" font-size="8.5" letter-spacing="1.8">ZERO-JANK COMPOSITOR PIPELINE</text>
+    <text x="674" y="480" fill="#38bdf8" font-size="8.5" letter-spacing="1.8">ZERO-JANK COMPOSITOR PIPELINE</text>
   </g>
 
   <!-- Monograph Header Hierarchy Breadcrumb -->
   <g transform="translate(42, 58)" class="mono-tech">
-    <rect x="0" y="0" width="8" height="8" fill="#d0bcff" />
+    <rect x="0" y="0" width="8" height="8" fill="#e5c158" />
     <text x="18" y="8" fill="#ffffff" font-size="11" font-weight="600" letter-spacing="1">README.md</text>
-    <text x="96" y="8" fill="#636c7e" font-size="11">/</text>
-    <text x="110" y="8" fill="#e6e9f0" font-size="11" letter-spacing="0.5">Shaarim Alam</text>
-    <text x="210" y="8" fill="#636c7e" font-size="11">/</text>
-    <text x="224" y="8" fill="#d0bcff" font-size="11" letter-spacing="0.8">Creative Full-Stack Architect</text>
-    <text x="590" y="8" fill="#8f96a6" font-size="9" letter-spacing="1.5">MERN • C++ • WEBGL • GSAP</text>
+    <text x="96" y="8" fill="#525c6a" font-size="11">/</text>
+    <text x="110" y="8" fill="#e2e8f0" font-size="11" letter-spacing="0.5">Shaarim Alam</text>
+    <text x="210" y="8" fill="#525c6a" font-size="11">/</text>
+    <text x="224" y="8" fill="#e5c158" font-size="11" letter-spacing="0.8">Full-Stack Craftsman</text>
+    <text x="590" y="8" fill="#717d91" font-size="9" letter-spacing="1.5">MERN • C++ • WEBGL • GSAP</text>
   </g>
 
   <!-- Hairline Divider -->
@@ -117,8 +99,8 @@
   <!-- LEFT HERO COLUMN: High-Craft Editorial Title -->
   <g transform="translate(42, 115)">
     <!-- Subtitle Category Tag -->
-    <text x="0" y="10" class="mono-tech" fill="#5eead4" font-size="10" font-weight="600" letter-spacing="2.6">
-      TREATISE ON MOTION DYNAMICS &amp; FULL-STACK PRECISION
+    <text x="0" y="10" class="mono-tech" fill="#38bdf8" font-size="10" font-weight="600" letter-spacing="2.6">
+      TREATISE ON MOTION DYNAMICS &amp; FULL-STACK ARCHITECTURE
     </text>
 
     <!-- Grand Serif Title -->
@@ -126,19 +108,19 @@
       On Motion Physics,
     </text>
     <text x="0" y="112" class="serif-display" font-size="44" letter-spacing="-0.5">
-      <tspan fill="#d0bcff" font-style="italic">Tactile Interfaces</tspan><tspan fill="#ffffff">, and the</tspan>
+      <tspan fill="#e5c158" font-style="italic">Tactile Interfaces</tspan><tspan fill="#ffffff">, and the</tspan>
     </text>
     <text x="0" y="164" class="serif-display" fill="#ffffff" font-size="44" letter-spacing="-0.5">
-      Geometry of <tspan fill="#e8e5dc" font-style="italic">Full-Stack Code</tspan>.
+      Geometry of <tspan fill="#f5f2eb" font-style="italic">Full-Stack Code</tspan>.
     </text>
 
     <!-- Bio / Abstract Line -->
     <g transform="translate(0, 196)" class="mono-tech">
-      <text x="0" y="0" fill="#a078ff" font-size="10" letter-spacing="2">AUTHOR PROVENANCE</text>
-      <text x="0" y="18" fill="#8f96a6" font-size="11" font-family="'Plus Jakarta Sans', sans-serif">
+      <text x="0" y="0" fill="#dfb76c" font-size="10" letter-spacing="2">AUTHOR PROVENANCE</text>
+      <text x="0" y="18" fill="#94a3b8" font-size="11" font-family="'Plus Jakarta Sans', sans-serif">
         Full Stack by trade, pixel perfectionist by nature. Architecting end-to-end applications
       </text>
-      <text x="0" y="34" fill="#8f96a6" font-size="11" font-family="'Plus Jakarta Sans', sans-serif">
+      <text x="0" y="34" fill="#94a3b8" font-size="11" font-family="'Plus Jakarta Sans', sans-serif">
         from C++ audio pipelines and MERN microservices to 144Hz scroll-linked WebGL shaders.
       </text>
     </g>
@@ -147,20 +129,20 @@
     <g transform="translate(0, 258)" class="mono-tech">
       <!-- Badge 1: Location -->
       <g>
-        <rect x="0" y="0" width="136" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="2" />
+        <rect x="0" y="0" width="136" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="2" />
         <circle cx="10" cy="11" r="3" fill="#10b981" />
-        <text x="20" y="14" fill="#e6e9f0" font-size="9.5" letter-spacing="0.5">JAMSHEDPUR, IN</text>
+        <text x="20" y="14" fill="#e2e8f0" font-size="9.5" letter-spacing="0.5">JAMSHEDPUR, IN</text>
       </g>
       <!-- Badge 2: Academic -->
       <g transform="translate(144, 0)">
-        <rect x="0" y="0" width="168" height="22" fill="#11151c" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="2" />
-        <text x="10" y="14" fill="#d0bcff" font-size="9.5" letter-spacing="0.5">NETAJI SUBHAS UNIV.</text>
+        <rect x="0" y="0" width="168" height="22" fill="#0d1017" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" rx="2" />
+        <text x="10" y="14" fill="#e5c158" font-size="9.5" letter-spacing="0.5">NETAJI SUBHAS UNIV.</text>
       </g>
       <!-- Badge 3: Status -->
       <g transform="translate(320, 0)">
-        <rect x="0" y="0" width="175" height="22" fill="#11151c" stroke="rgba(6, 182, 212, 0.3)" stroke-width="1" rx="2" />
-        <circle cx="10" cy="11" r="3" fill="#5eead4" />
-        <text x="20" y="14" fill="#5eead4" font-size="9.5" letter-spacing="0.5">OPEN FOR ENGAGEMENT</text>
+        <rect x="0" y="0" width="175" height="22" fill="#0d1017" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1" rx="2" />
+        <circle cx="10" cy="11" r="3" fill="#38bdf8" />
+        <text x="20" y="14" fill="#38bdf8" font-size="9.5" letter-spacing="0.5">OPEN FOR ENGAGEMENT</text>
       </g>
     </g>
   </g>
@@ -169,12 +151,12 @@
   <!-- Box Container -->
   <g transform="translate(585, 96)">
     <!-- Plate Background -->
-    <rect x="0" y="0" width="290" height="295" fill="#0b0e14" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" rx="4" />
+    <rect x="0" y="0" width="290" height="295" fill="#080b10" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" rx="3" />
     
     <!-- Plate Header -->
     <g transform="translate(14, 20)" class="mono-tech">
-      <text x="0" y="0" fill="#8f96a6" font-size="9.5" letter-spacing="1.2">FIG. 1.1 — KINETIC GYROSCOPE</text>
-      <text x="262" y="0" fill="#5eead4" font-size="8.5" text-anchor="end" letter-spacing="1">144 FPS V-SYNC</text>
+      <text x="0" y="0" fill="#717d91" font-size="9.5" letter-spacing="1.2">FIG. 1.1 — KINETIC GYROSCOPE</text>
+      <text x="262" y="0" fill="#38bdf8" font-size="8.5" text-anchor="end" letter-spacing="1">144 FPS V-SYNC</text>
     </g>
     
     <line x1="14" y1="28" x2="276" y2="28" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
@@ -189,65 +171,65 @@
     
     <!-- Outer Orbit Ring (Static reference) -->
     <circle cx="145" cy="150" r="86" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.75" fill="none" />
-    <circle cx="145" cy="150" r="66" stroke="rgba(208, 188, 255, 0.25)" stroke-width="0.8" fill="none" stroke-dasharray="4,4" />
-    <circle cx="145" cy="150" r="42" stroke="rgba(94, 234, 212, 0.3)" stroke-width="0.8" fill="none" />
-    <circle cx="145" cy="150" r="22" stroke="rgba(249, 168, 212, 0.25)" stroke-width="0.8" fill="none" stroke-dasharray="2,2" />
+    <circle cx="145" cy="150" r="66" stroke="rgba(229, 193, 88, 0.25)" stroke-width="0.8" fill="none" stroke-dasharray="4,4" />
+    <circle cx="145" cy="150" r="42" stroke="rgba(56, 189, 248, 0.3)" stroke-width="0.8" fill="none" />
+    <circle cx="145" cy="150" r="22" stroke="rgba(255, 255, 255, 0.2)" stroke-width="0.8" fill="none" stroke-dasharray="2,2" />
 
     <!-- Animated Rotating Outer Ring with Nodes -->
     <g class="orbit-cw">
       <!-- Chord Lines -->
-      <line x1="145" y1="84" x2="88" y2="183" stroke="rgba(208, 188, 255, 0.2)" stroke-width="0.8" />
-      <line x1="145" y1="84" x2="202" y2="183" stroke="rgba(94, 234, 212, 0.2)" stroke-width="0.8" />
+      <line x1="145" y1="84" x2="88" y2="183" stroke="rgba(229, 193, 88, 0.2)" stroke-width="0.8" />
+      <line x1="145" y1="84" x2="202" y2="183" stroke="rgba(56, 189, 248, 0.2)" stroke-width="0.8" />
       <line x1="88" y1="183" x2="202" y2="183" stroke="rgba(255, 255, 255, 0.15)" stroke-width="0.8" />
-      <line x1="88" y1="117" x2="202" y2="117" stroke="rgba(208, 188, 255, 0.15)" stroke-width="0.8" />
+      <line x1="88" y1="117" x2="202" y2="117" stroke="rgba(229, 193, 88, 0.15)" stroke-width="0.8" />
 
       <!-- Nodes -->
-      <circle cx="145" cy="84" r="4" fill="#d0bcff" />
-      <circle cx="145" cy="84" r="7" stroke="#d0bcff" stroke-width="0.5" stroke-opacity="0.5" fill="none" />
+      <circle cx="145" cy="84" r="4" fill="#e5c158" />
+      <circle cx="145" cy="84" r="7" stroke="#e5c158" stroke-width="0.5" stroke-opacity="0.5" fill="none" />
       
-      <circle cx="202" cy="117" r="3.5" fill="#5eead4" />
-      <circle cx="202" cy="183" r="4" fill="#d0bcff" />
-      <circle cx="145" cy="216" r="3" fill="#9ba1b0" />
-      <circle cx="88" cy="183" r="3.5" fill="#f9a8d4" />
-      <circle cx="88" cy="117" r="3" fill="#5eead4" />
+      <circle cx="202" cy="117" r="3.5" fill="#38bdf8" />
+      <circle cx="202" cy="183" r="4" fill="#e5c158" />
+      <circle cx="145" cy="216" r="3" fill="#94a3b8" />
+      <circle cx="88" cy="183" r="3.5" fill="#f5f2eb" />
+      <circle cx="88" cy="117" r="3" fill="#38bdf8" />
     </g>
 
     <!-- Animated Counter-Clockwise Inner Ring -->
     <g class="orbit-ccw">
-      <ellipse cx="145" cy="150" rx="42" ry="16" stroke="rgba(208, 188, 255, 0.45)" stroke-width="0.8" fill="none" />
+      <ellipse cx="145" cy="150" rx="42" ry="16" stroke="rgba(229, 193, 88, 0.45)" stroke-width="0.8" fill="none" />
       <circle cx="187" cy="150" r="3" fill="#ffffff" />
-      <circle cx="103" cy="150" r="2.5" fill="#5eead4" />
+      <circle cx="103" cy="150" r="2.5" fill="#38bdf8" />
     </g>
 
     <!-- Center Kinetic Core -->
-    <circle cx="145" cy="150" r="8" fill="#11151c" stroke="#d0bcff" stroke-width="1.5" />
-    <circle cx="145" cy="150" r="3.5" fill="#d0bcff" />
+    <circle cx="145" cy="150" r="8" fill="#0d1017" stroke="#e5c158" stroke-width="1.5" />
+    <circle cx="145" cy="150" r="3.5" fill="#e5c158" />
 
     <!-- Center Label -->
     <text x="145" y="132" class="mono-tech" fill="#ffffff" font-size="7.5" font-weight="600" text-anchor="middle" letter-spacing="1.5">
       KINETIC CORE
     </text>
-    <text x="145" y="174" class="mono-tech" fill="#5eead4" font-size="7" text-anchor="middle" letter-spacing="1">
+    <text x="145" y="174" class="mono-tech" fill="#38bdf8" font-size="7" text-anchor="middle" letter-spacing="1">
       GLSL • THREE.JS
     </text>
 
     <!-- Plate Footer Metrics -->
     <line x1="14" y1="262" x2="276" y2="262" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
     <g transform="translate(14, 280)" class="mono-tech">
-      <text x="0" y="0" fill="#8f96a6" font-size="8.5">Event Loop Jitter</text>
-      <text x="262" y="0" fill="#d0bcff" font-size="8.5" text-anchor="end" font-weight="600">0.00% // Deterministic</text>
+      <text x="0" y="0" fill="#717d91" font-size="8.5">Event Loop Jitter</text>
+      <text x="262" y="0" fill="#e5c158" font-size="8.5" text-anchor="end" font-weight="600">0.00% // Deterministic</text>
     </g>
   </g>
 
   <!-- Bottom Archival Status Bar -->
   <line x1="42" y1="416" x2="878" y2="416" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
   <g transform="translate(42, 442)" class="mono-tech">
-    <text x="0" y="0" fill="#8f96a6" font-size="10">
+    <text x="0" y="0" fill="#717d91" font-size="10">
       Typeset for GitHub Profile &amp; High-Craft Engineering
     </text>
-    <text x="360" y="0" fill="#636c7e" font-size="10">•</text>
-    <text x="375" y="0" fill="#e6e9f0" font-size="10">PORTFOLIO: shaarim.vercel.app</text>
-    <text x="610" y="0" fill="#636c7e" font-size="10">•</text>
-    <text x="625" y="0" fill="#5eead4" font-size="10">GPG: 0x7F1D·B24A·SHAARIM</text>
+    <text x="360" y="0" fill="#525c6a" font-size="10">•</text>
+    <text x="375" y="0" fill="#e2e8f0" font-size="10">PORTFOLIO: shaarim.vercel.app</text>
+    <text x="610" y="0" fill="#525c6a" font-size="10">•</text>
+    <text x="625" y="0" fill="#38bdf8" font-size="10">GPG: 0x7F1D·B24A·SHAARIM</text>
   </g>
 </svg>
