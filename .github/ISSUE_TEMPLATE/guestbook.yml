@@ -1,0 +1,27 @@
+name: ✏️ Guestbook Entry
+description: Leave an entry in Shaarim's cyberspace guestbook!
+title: "Guestbook Entry"
+labels: [guest]
+assignees: []
+body:
+  - type: textarea
+    id: message
+    attributes:
+      label: Message 
+      description: Thanks for stopping by! Feel free to leave a friendly note, question, or say hello.
+      placeholder: "Hey Shaarim, loved checking out your projects..."
+    validations:
+      required: true
+  - type: dropdown
+    id: referral
+    attributes:
+      label: How did you find my profile?
+      description: Let me know where you discovered my cyberspace page.
+      options:
+        - "GitHub Explore / Search"
+        - "Portfolio (shaarim.vercel.app)"
+        - "LinkedIn"
+        - "Twitter / X"
+        - "Word of Mouth / Other"
+    validations:
+      required: false

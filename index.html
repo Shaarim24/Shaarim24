@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Shaarim Alam — Minimalist Neofetch Profile</title>
+  <title>Shaarim Alam — World Wide Web Profile</title>
   
   <!-- Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -54,19 +54,25 @@
       background-size: 32px 32px;
     }
 
-    /* Smooth Spotlight */
-    .spotlight-card {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.25s ease;
+    .ascii-box {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 8px;
+      line-height: 8.5px;
+      letter-spacing: 0.5px;
+      white-space: pre;
+      color: #c9d1d9;
+      text-align: center;
     }
-    .spotlight-card:hover {
-      box-shadow: 0 12px 35px -10px rgba(56, 189, 248, 0.15);
+    @media (min-width: 640px) {
+      .ascii-box {
+        font-size: 9px;
+        line-height: 9.5px;
+      }
     }
   </style>
 </head>
 
-<body class="bg-grid-pattern min-h-screen py-12 px-4 sm:px-6 flex flex-col items-center justify-center">
+<body class="bg-grid-pattern min-h-screen py-10 px-4 sm:px-6 flex flex-col items-center">
 
   <!-- Floating Sticky Action Deck (Top Right) -->
   <aside class="fixed top-5 right-5 z-50 flex items-center gap-3">
@@ -90,7 +96,7 @@
   </div>
 
   <!-- MAIN GITHUB-STYLE CONTAINER -->
-  <div class="w-full max-w-[960px] mx-auto space-y-6">
+  <div class="w-full max-w-[880px] mx-auto space-y-6">
 
     <!-- Top Label -->
     <div class="flex items-center justify-between text-xs font-mono text-github-muted px-2">
@@ -99,61 +105,212 @@
         <span class="text-white font-semibold">Shaarim24</span> / <span class="text-github-muted">README.md</span>
       </div>
       <div class="text-[11px]">
-        Minimalist Neofetch Spec
+        Web 1.0 Retro Cyberspace Edition
       </div>
     </div>
 
     <!-- PROFILE README CARD -->
-    <div class="p-8 sm:p-10 bg-github-bg border border-github-border rounded-xl shadow-2xl spotlight-card flex flex-col items-center text-center">
+    <div class="p-8 sm:p-12 bg-github-bg border border-github-border rounded-xl shadow-2xl space-y-8">
 
-      <!-- Side-by-Side Table Area -->
-      <div class="w-full flex flex-col md:flex-row items-center justify-center gap-6 pb-6">
-        
-        <!-- Left: ASCII Portrait -->
-        <div class="w-full max-w-[370px] aspect-square rounded-xl overflow-hidden border border-github-border bg-white shadow-lg flex-shrink-0">
-          <img src="./assets/ascii-art.png" alt="Shaarim Alam" class="w-full h-full object-cover object-center" />
-        </div>
-
-        <!-- Right: Terminal info-card.svg -->
-        <div class="w-full max-w-[490px] flex-shrink-0 shadow-lg rounded-xl overflow-hidden">
-          <img src="./info-card.svg" alt="Shaarim Info" class="w-full h-auto block" />
-        </div>
-
+      <!-- Retro Banner -->
+      <div class="text-center">
+        <img alt="Welcome to my World Wide Web profile!" src="assets/banner.png" class="mx-auto max-w-[85%] invert dark:invert-0" />
       </div>
 
-      <div class="w-full max-w-[860px] border-b border-github-border/60 my-4"></div>
+      <!-- Tux & Guestbook Row -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-center">
+        <div class="flex flex-col items-center">
+          <img src="assets/tux.gif" alt="Tux" class="h-20 sm:h-24 w-auto" />
+          <strong class="text-sm font-semibold text-white mt-2">I love using Linux &amp; C++!</strong>
+        </div>
 
-      <!-- Identity -->
-      <div class="space-y-2 pt-2">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+        <div class="flex flex-col items-center">
+          <a href="https://github.com/Shaarim24/Shaarim24/issues/new?labels=guest&template=guestbook.yml&title=Guestbook+Entry" target="_blank" rel="noreferrer" class="group">
+            <img src="assets/guestbook.gif" alt="Guestbook" class="h-20 sm:h-24 w-auto transform group-hover:scale-105 transition-transform" />
+          </a>
+          <a href="https://github.com/Shaarim24/Shaarim24/issues/new?labels=guest&template=guestbook.yml&title=Guestbook+Entry" target="_blank" rel="noreferrer" class="text-sm font-bold text-sky-400 hover:underline mt-2">
+            Sign my guestbook! ↗
+          </a>
+        </div>
+      </div>
+
+      <!-- ASCII Art Portrait -->
+      <details open class="border border-github-border rounded-lg bg-github-card/40 p-4">
+        <summary class="text-center font-mono text-xs font-bold text-sky-400 cursor-pointer py-1 hover:text-white transition-colors">
+          [ ✦ SHAARIM ALAM // ASCII HOLOGRAM ✦ ]
+        </summary>
+        <div class="overflow-x-auto pt-4 flex justify-center">
+          <div class="ascii-box text-github-text">
+.................................................................................................
+.................................................................................................
+..........................................................::.....................................
+....................................:-##:**#%*##@@::-:::..:......................................
+................................:*%%%%%@@@%%@@@@@@@%@@@%*-:.:....................................
+..............................:@@@@@%%#%%##%%%@@@@@@@%@@@@#*+:...................................
+.............................%@@@*@@@@@@@%%@@@@@@@@@@@@@@%%%#%%#::...............................
+...........................=#@@@@@%@@@@@@@@@%@@@@@@@%@@@@@@@%#+=:::..............................
+..........................=@@@@@@@@@@@@@%@@%@@@@@%@@@@@@@%#%@@*:::...............................
+..........................*%@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@%:::..............................
+..........................@@@@@@@@@@@@@@@@@@@%@@@%@%@@@%#@@@@@@%:=...............................
+.........................+@@@@@@@@@@@@@@@@@@%%%%%@@@%%@#@@@@@@@%:::..............................
+.........................:%*@@@@@@@@@@@@@%%%%###%##%%%@@@@@@@@%%:-::.............................
+...........................:@@@@@@@@@@@@%#%#+=%*++**%@%%@@@@@@@=:................................
+............................:@@@@@%@@@%%%%*+=-=----=++*%@@@@@@@#.................................
+.............................%@@@%#@@@@@@%===--===%@%#%@%*%@@@-..................................
+..............................#@@===%#%@@%%#*--**%%%%+=*--#@@%...................................
+..............................%%%-+**#*+++*++-:-=+++==*--:=#*:...................................
+...............................#%-======--===-:---:::::::::+-....................................
+...............................+%---------=+-::--::::::::::-:....................................
+................................%+-==-----+---:::-::::::::=-.....................................
+................................-+-===---==++-----::::-:::--.....................................
+..................................-===---==*#+=+-::::::::-:......................................
+...................................====+%#*=-=+--+==----::.......................................
+...................................:-===*@%%##*#*-==-----........................................
+....................................:=====++=-=--------=-........................................
+.....................................-====+#%%%%==----+--:.......................................
+.....................................-=====----:::--*=-:::.......................................
+......................................===@#*+=*+=%%*---:::::-@*..................................
+......................................====++*%%#*+---:::::::--@@@%:..............................
+....................................@--====++++==---:::::::::@@@@@@@%%:..........................
+.................................@@@=-=========---::::::::::@@@@@@@@@@@@@%%......................
+..............................:@@@@@+====+===----::::::::::@@@@@@@@@@@@@@@@@@%@@.................
+...........................=@@@@@@@@@======------::::::::=@@@@@@@@@@@@@@@@@@@@@@@@%@+............
+........................%@@@@@@@@@@@@@+====--------::::-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%.........
+.....................@@@@@@@@@@@@@@@@@@=---=-::::--::@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#......
+.................@@@@@@@@@@@@@@@@@@@@@@@@@@=-:::%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%*....
+..............@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%...
+............@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%..
+..........%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%.
+.........@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%
+........@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.......%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.......@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+......@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+......@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.....#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+....=@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+....@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+...@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*-
+          </div>
+        </div>
+      </details>
+
+      <!-- Identity Header & Badges -->
+      <div class="text-center space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
           Shaarim Alam
         </h2>
-
-        <p class="text-sm sm:text-base text-github-text font-normal">
-          <strong>Fullstack Developer · Systems Enthusiast · Creative Coder</strong>
+        <p class="text-sm sm:text-base text-github-text font-medium">
+          Fullstack Developer · Systems Enthusiast · Creative Coder
         </p>
+
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://shaarim.vercel.app/" target="_blank" rel="noreferrer" class="hover:opacity-90 transition-opacity">
+            <img src="https://img.shields.io/badge/Portfolio-shaarim.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+          </a>
+          <a href="https://www.linkedin.com/in/shaarim-alam-a680b7349/" target="_blank" rel="noreferrer" class="hover:opacity-90 transition-opacity">
+            <img src="https://img.shields.io/badge/LinkedIn-Shaarim_Alam-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+          </a>
+          <a href="mailto:shaarimalam888@gmail.com" class="hover:opacity-90 transition-opacity">
+            <img src="https://img.shields.io/badge/Email-shaarimalam888@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+          </a>
+        </div>
       </div>
 
-      <!-- Social Badges Strip -->
-      <div class="pt-6 flex flex-wrap items-center justify-center gap-3">
-        <a href="https://shaarim.vercel.app/" target="_blank" rel="noreferrer" class="hover:opacity-90 transition-opacity">
-          <img src="https://img.shields.io/badge/Portfolio-shaarim.vercel.app-0d1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-        </a>
+      <div class="border-b border-github-border"></div>
 
-        <a href="https://www.linkedin.com/in/shaarim-alam-a680b7349/" target="_blank" rel="noreferrer" class="hover:opacity-90 transition-opacity">
-          <img src="https://img.shields.io/badge/LinkedIn-Shaarim_Alam-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-        </a>
+      <!-- Extended Section: System Specs -->
+      <section class="space-y-4 font-mono text-xs">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <span>💾</span>
+          <span>// System Specifications &amp; Who I Am</span>
+        </h3>
+        <ul class="space-y-2 text-github-text pl-2">
+          <li>🎓 <strong>Academics</strong>: Diploma Year 2 in Computer Science &amp; Engineering @ <strong>Netaji Subhas University</strong> (2024–2027)</li>
+          <li>📍 <strong>Coordinates</strong>: Jamshedpur, Jharkhand, India (<span class="text-sky-400">22.8046° N, 86.2029° E</span>)</li>
+          <li>🖥️ <strong>Operating Systems</strong>: Arch Linux, Windows 11</li>
+          <li>💻 <strong>Editors &amp; Environment</strong>: VS Code, Neovim, zsh</li>
+          <li>🌐 <strong>Primary Stack</strong>: MERN (MongoDB, Express, React, Node.js), C++20, Three.js / WebGL, Lua 5.4, GSAP 3</li>
+        </ul>
+      </section>
 
-        <a href="mailto:shaarimalam888@gmail.com" class="hover:opacity-90 transition-opacity">
-          <img src="https://img.shields.io/badge/Email-shaarimalam888@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-        </a>
+      <div class="border-b border-github-border"></div>
+
+      <!-- Extended Section: Projects -->
+      <section class="space-y-5">
+        <h3 class="text-base font-bold text-white font-mono flex items-center gap-2">
+          <span>📂</span>
+          <span>// Selected Software &amp; Projects</span>
+        </h3>
+
+        <div class="space-y-4">
+          <!-- Beativa -->
+          <div class="p-4 bg-github-card border border-github-border rounded-lg space-y-2">
+            <div class="flex items-center justify-between">
+              <a href="https://github.com/Shaarim24/Beativa-Music-Player" target="_blank" rel="noreferrer" class="text-lg font-bold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
+                <span>🎵 Beativa Music Player</span>
+                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </a>
+              <span class="font-mono text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 border border-emerald-800 rounded">Zero Jitter DAC</span>
+            </div>
+            <p class="text-xs text-github-muted leading-relaxed">
+              Lightweight desktop audio client written in C++20 for instant &lt; 1.8ms startup. Integrates yt-dlp multithreaded caching pipeline and direct 44.1kHz Hi-Fi DAC audio stream synchronization with a neon terminal HUD.
+            </p>
+          </div>
+
+          <!-- Chattic -->
+          <div class="p-4 bg-github-card border border-github-border rounded-lg space-y-2">
+            <div class="flex items-center justify-between">
+              <a href="https://chattic-plum.vercel.app/" target="_blank" rel="noreferrer" class="text-lg font-bold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
+                <span>💬 Chattic Real-Time Messenger</span>
+                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </a>
+              <span class="font-mono text-[11px] text-sky-400 bg-sky-950/40 px-2 py-0.5 border border-sky-800 rounded">&lt; 15ms Latency</span>
+            </div>
+            <p class="text-xs text-github-muted leading-relaxed">
+              Full-stack bi-directional communication platform featuring grouped channels, direct messaging, live media transfers, and reactions with optimistic state persistence.
+            </p>
+          </div>
+
+          <!-- Creative Shaders -->
+          <div class="p-4 bg-github-card border border-github-border rounded-lg space-y-2">
+            <div class="flex items-center justify-between">
+              <a href="https://shaarim.vercel.app" target="_blank" rel="noreferrer" class="text-lg font-bold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
+                <span>✨ Creative Shaders &amp; Motion Lab</span>
+                <span class="material-symbols-outlined text-sm">arrow_outward</span>
+              </a>
+              <span class="font-mono text-[11px] text-amber-400 bg-amber-950/40 px-2 py-0.5 border border-amber-800 rounded">120 FPS Locked</span>
+            </div>
+            <p class="text-xs text-github-muted leading-relaxed">
+              Hardware-accelerated WebGL playground running custom GLSL fragment shaders, inertia-driven physics simulations, and fluid spatial particle systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clippy & W3C Badges -->
+      <div class="pt-6 border-t border-github-border flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <img src="assets/valid-xhtml10.gif" alt="Valid XHTML 1.0" />
+          <img src="assets/valid-css1.gif" alt="Valid CSS 1" />
+        </div>
+
+        <div class="flex items-center gap-3">
+          <img src="assets/clippy.gif" alt="Clippy" class="h-16 w-auto" />
+          <p class="text-xs italic text-github-muted max-w-xs">
+            "Hi! It looks like you're exploring Shaarim's cyberspace profile. Would you like to star a repository?"
+          </p>
+        </div>
       </div>
 
     </div>
 
     <!-- Live Preview Footer Note -->
     <div class="text-center font-mono text-xs text-github-muted pt-4">
-      Conforms strictly to the minimal side-by-side terminal format • Pushed to <strong>Shaarim24/Shaarim24</strong>
+      Retro Web 1.0 Cyberspace Spec • Pushed to <strong>Shaarim24/Shaarim24</strong>
     </div>
 
   </div>
@@ -187,10 +344,10 @@
     });
 
     // Smooth Entrance with GSAP
-    gsap.from(".spotlight-card", {
+    gsap.from(".ascii-box", {
       opacity: 0,
-      y: 20,
-      duration: 0.7,
+      scale: 0.98,
+      duration: 0.8,
       ease: "power2.out"
     });
   </script>
