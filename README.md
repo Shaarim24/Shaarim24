@@ -22,14 +22,8 @@
   </a>
 </p>
 
-<br />
-
 <p align="center">
-  <strong>i love code</strong>&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/cat-typing.gif" height="34" alt="cat typing"/>&nbsp;&nbsp;<strong>and building fast systems</strong>
-</p>
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/under-construction.gif" alt="Under Construction" />
+  <img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/cat-typing.gif" width="150" alt="Cat Typing" />
 </p>
 
 <div align="center">
@@ -129,6 +123,10 @@ Most UIs settle too early. I don't. Every project gets pushed until the spacing 
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/flames.gif" alt="Flames" width="100%" />
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/under-construction.gif" alt="Under Construction" width="85%" />
 </p>
 
 <p align="center">
