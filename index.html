@@ -118,6 +118,15 @@
         </div>
       </div>
 
+      <!-- Cat typing and Under Construction -->
+      <div class="flex flex-col items-center gap-3 pt-1">
+        <div class="flex items-center gap-2 text-sm text-github-text">
+          <strong class="text-white font-mono">i love code</strong>
+          <img src="assets/cat-typing.gif" alt="cat typing" class="h-8 w-auto inline-block" />
+          <strong class="text-white font-mono">and building fast systems</strong>
+        </div>
+        <img src="assets/under-construction.gif" alt="Under Construction" class="max-w-[95%] sm:max-w-none" />
+      </div>
 
       <!-- Identity Header & Badges -->
       <div class="text-center space-y-3">
@@ -173,6 +182,7 @@
             <div class="flex items-center justify-between">
               <a href="https://github.com/Shaarim24/Beativa-Music-Player" target="_blank" rel="noreferrer" class="text-lg font-bold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
                 <span>🎵 Beativa Music Player</span>
+                <img src="assets/hot.gif" alt="HOT" class="h-3.5 w-auto inline-block" />
                 <span class="material-symbols-outlined text-sm">arrow_outward</span>
               </a>
               <span class="font-mono text-[11px] text-emerald-400 bg-emerald-950/40 px-2 py-0.5 border border-emerald-800 rounded">Zero Jitter DAC</span>
@@ -187,6 +197,7 @@
             <div class="flex items-center justify-between">
               <a href="https://chattic-plum.vercel.app/" target="_blank" rel="noreferrer" class="text-lg font-bold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
                 <span>💬 Chattic Real-Time Messenger</span>
+                <img src="assets/hot.gif" alt="HOT" class="h-3.5 w-auto inline-block" />
                 <span class="material-symbols-outlined text-sm">arrow_outward</span>
               </a>
               <span class="font-mono text-[11px] text-sky-400 bg-sky-950/40 px-2 py-0.5 border border-sky-800 rounded">&lt; 15ms Latency</span>
@@ -201,6 +212,7 @@
             <div class="flex items-center justify-between">
               <a href="https://shaarim.vercel.app" target="_blank" rel="noreferrer" class="text-lg font-bold text-white hover:text-sky-400 transition-colors flex items-center gap-1.5">
                 <span>✨ Creative Shaders &amp; Motion Lab</span>
+                <img src="assets/hot.gif" alt="HOT" class="h-3.5 w-auto inline-block" />
                 <span class="material-symbols-outlined text-sm">arrow_outward</span>
               </a>
               <span class="font-mono text-[11px] text-amber-400 bg-amber-950/40 px-2 py-0.5 border border-amber-800 rounded">120 FPS Locked</span>
@@ -225,6 +237,11 @@
             "Hi! It looks like you're exploring Shaarim's cyberspace profile. Would you like to star a repository?"
           </p>
         </div>
+      </div>
+
+      <!-- Flames Divider -->
+      <div class="pt-2">
+        <img src="assets/flames.gif" alt="Flames" class="w-full h-auto rounded" />
       </div>
 
     </div>
@@ -262,14 +279,6 @@
       } catch (err) {
         showToast("README.md copied to clipboard!");
       }
-    });
-
-    // Smooth Entrance with GSAP
-    gsap.from(".ascii-box", {
-      opacity: 0,
-      scale: 0.98,
-      duration: 0.8,
-      ease: "power2.out"
     });
   </script>
 </body>

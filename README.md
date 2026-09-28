@@ -24,6 +24,14 @@
 
 <br />
 
+<p align="center">
+  <strong>i love code</strong>&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/cat-typing.gif" height="34" alt="cat typing"/>&nbsp;&nbsp;<strong>and building fast systems</strong>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/under-construction.gif" alt="Under Construction" />
+</p>
+
 <div align="center">
 
 <h2>Shaarim Alam</h2>
@@ -62,19 +70,19 @@ Most UIs settle too early. I don't. Every project gets pushed until the spacing 
 
 ### 📂 // Selected Software & Projects
 
-#### 🎵 [Beativa Music Player](https://github.com/Shaarim24/Beativa-Music-Player)
+#### 🎵 [Beativa Music Player](https://github.com/Shaarim24/Beativa-Music-Player)&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/hot.gif" alt="HOT" height="15" />
 > **Lightweight Desktop Audio Client** • `C++20` • `yt-dlp` • `Terminal UI` • `Zero Jitter`
 > - Engineered in modern C++20 for instant `< 1.8ms` startup latency.
 > - High-performance multithreaded caching pipeline powered by yt-dlp.
 > - Direct 44.1kHz Hi-Fi DAC audio stream synchronization with custom neon terminal HUD.
 
-#### 💬 [Chattic Real-Time Messenger](https://chattic-plum.vercel.app/)
+#### 💬 [Chattic Real-Time Messenger](https://chattic-plum.vercel.app/)&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/hot.gif" alt="HOT" height="15" />
 > **Bi-Directional Messaging Platform** • `React` • `Socket.IO` • `Node.js` • `MongoDB`
 > - Full-stack WebSocket messaging architecture running at `< 15ms` wire latency.
 > - Supports custom group channels, direct messaging, live media transfers, and reactions.
 > - Optimistic UI state persistence with automatic reconnection fallbacks.
 
-#### ✨ [Creative Shaders & Motion Lab](https://shaarim.vercel.app)
+#### ✨ [Creative Shaders & Motion Lab](https://shaarim.vercel.app)&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/hot.gif" alt="HOT" height="15" />
 > **Spatial Graphics & Shaders Showcase** • `Three.js` • `GLSL` • `GSAP 3` • `120 FPS`
 > - Hardware-accelerated WebGL playground running custom GLSL fragment shaders.
 > - Inertia-driven physics simulations and fluid spatial particle systems.
@@ -117,6 +125,10 @@ Most UIs settle too early. I don't. Every project gets pushed until the spacing 
   <img alt="Valid XHTML 1.0" src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/valid-xhtml10.gif"/>
   &nbsp;&nbsp;
   <img alt="Valid CSS 1" src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/valid-css1.gif"/>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Shaarim24/Shaarim24/main/assets/flames.gif" alt="Flames" width="100%" />
 </p>
 
 <p align="center">
